@@ -1,17 +1,22 @@
-import React from 'react'
-import GetInTouch from '../components/GetInTouch';
-import GetStarted from '../components/GetStarted';
-import Header from '../components/Header';
+import React from "react";
+import AboutUs from "../components/AboutUs";
+import GetStarted from "../components/GetStarted";
+import GetStarted2 from "../components/GetStarted2";
+import Header from "../components/Header";
+import Navbar from "../components/Navbar";
+import Slider from "../components/Slider";
 
 const Home = () => {
   return (
     <>
-    <Header />
-    <GetStarted />
-    <GetInTouch />
+      {/* <Navbar /> */}
+      <Header />
+      <GetStarted />
+      <GetStarted2 />
+      <AboutUs />
+      <Slider />
     </>
+  );
+};
 
-  )
-}
-
-export default Home
+export default Home;

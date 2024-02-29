@@ -1,110 +1,151 @@
-import React from 'react'
-import { 
-    Box,
-    Grid,
-    styled,
-    Typography,
-} from '@mui/material'
-import Title from './Title'
-// img
-import imgDetail from '../assets/pexels-alex-staudinger-1732414.jpg';
-import imgDetail2 from '../assets/pexels-pixabay-271816.jpg';
 
+import React, { useState } from "react";
+import { useInView } from "react-intersection-observer";
+import MapsHomeWorkOutlinedIcon from "@mui/icons-material/MapsHomeWorkOutlined";
+import { Box, Divider, Stack, Typography } from "@mui/material";
+import Title from "./Title";
 
 const GetStarted = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
 
-    const CustomGridItem = styled(Grid) ({
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-    })
-    
-    const CustomTypography = styled(Typography) ({
-        fontSize: '1.1rem',
-        textAlign: 'start',
-        lineHeight: '1.5',
-        color: '#515151',
-        marginTop: '1.5rem',
-    })
+  const [isVisible, setIsVisible] = useState(false);
 
-    return (
-            
-        <Grid container spacing={{ xs: 4, sm: 4, md: 0 }}   
+  // Set visibility to true when in view
+  if (inView && !isVisible) {
+    setIsVisible(true);
+  }
+
+  return (
+    <Stack
+    container
+    ref={ref}
+    sx={{
+      opacity: isVisible ? 1 : 0, // Set opacity based on visibility
+      transition: "opacity 1s", // Add a smooth transition effect
+      py: 20,
+      backgroundImage: `url(${"https://www.ibs.com.vn/wp-content/uploads/2020/03/Group-7757-min.png"})`,
+      backgroundSize: "cover",
+    }}
+    direction="row"
+    divider={<Divider orientation="vertical" flexItem />}
+    spacing={2}
+    justifyContent="center"
+    alignItems="center"
+  >
+      <Box
+        component="article"
         sx={{
-            py: 10,
-            px: 2,
-             
+          px: 4,
+          color:"white",
         }}
-        >
-            <CustomGridItem item xs={12} sm={8} md={6} 
-            component = 'section'
-           
-            >
-                <Box component='article'
-                sx={{
-                    px: 4,
-                }}
-                >
-                    <Title
-                    text={
-                        'We make it easy for tenants and landlords'
-                    }
-                    textAlign={'start'}
-                    />
-                    <CustomTypography>
-                        Listing are updated continuously so you<br />
-                        won't miss out on homes that just hit<br />
-                        market until you find your perfect home.
-                    </CustomTypography> 
-                </Box>
-
-            </CustomGridItem>
-            
-            <Grid item xs={12} sm={4} md={6}>
-                <img src={imgDetail} alt="" 
-                style={{
-                    width: '100%',
-                }}
-                />
-            </Grid>
-
-            <Grid item xs={12} sm={4} md={6}
-            sx={{
-                order: {xs: 4, sm: 4, md: 3}
-            }}
-            >
-                <img src={imgDetail2} alt="" 
-                style={{ 
-                    width: "100%",
-                }}
-                />
-            </Grid>
-
-            <CustomGridItem item xs={12} sm={8} md={6}
-            sx={{
-                order: {xs: 3, sm: 3, md: 4}
-            }}
-            >
-                <Box component='article'
-                sx={{
-                    px: 4,
-                }}
-                >
-                    <Title
-                    text={
-                        'Match with the best agent'
-                        
-                    }
-                    textAlign={'start'}
-                    />
-                    <CustomTypography>
-                        Our verified partner Agents are local experts who<br /> 
-                        earn an average of 4.8/5 stars from buyers and sellers.
-                    </CustomTypography>
-                </Box>
-            </CustomGridItem>
-        </Grid>
-    )
-}
+      >
+        <Title text={"Lĩnh vực kinh doanh"} textAlign={"start"} />
+      </Box>
+      <Box
+        component="article"
+        sx={{
+          px: 4,
+          py: 2, // Add padding top and bottom
+          textAlign: "center", // Center the content
+          fontSize: "0.8rem", // Adjust the font size as needed
+        }}
+      >
+        <MapsHomeWorkOutlinedIcon
+          sx={{
+            fontSize: 50, // Adjust the icon size
+            color: "orange",
+            marginBottom: 1, // Add margin at the bottom
+          }}
+        />
+        <Typography variant="h6" component="h5" color="white">
+          Lĩnh vực 1
+        </Typography>
+      </Box>
+      <Box
+        component="article"
+        sx={{
+          px: 4,
+          py: 2, // Add padding top and bottom
+          textAlign: "center", // Center the content
+          fontSize: "0.8rem", // Adjust the font size as needed
+        }}
+      >
+        <MapsHomeWorkOutlinedIcon
+          sx={{
+            fontSize: 50, // Adjust the icon size
+            color: "orange",
+            marginBottom: 1, // Add margin at the bottom
+          }}
+        />
+        <Typography variant="h6" component="h5" color="white">
+          Lĩnh vực 1
+        </Typography>
+      </Box>
+      <Box
+        component="article"
+        sx={{
+          px: 4,
+          py: 2, // Add padding top and bottom
+          textAlign: "center", // Center the content
+          fontSize: "0.8rem", // Adjust the font size as needed
+        }}
+      >
+        <MapsHomeWorkOutlinedIcon
+          sx={{
+            fontSize: 50, // Adjust the icon size
+            color: "orange",
+            marginBottom: 1, // Add margin at the bottom
+          }}
+        />
+        <Typography variant="h6" component="h5" color="white">
+          Lĩnh vực 1
+        </Typography>
+      </Box>
+      <Box
+        component="article"
+        sx={{
+          px: 4,
+          py: 2, // Add padding top and bottom
+          textAlign: "center", // Center the content
+          fontSize: "0.8rem", // Adjust the font size as needed
+        }}
+      >
+        <MapsHomeWorkOutlinedIcon
+          sx={{
+            fontSize: 50, // Adjust the icon size
+            color: "orange",
+            marginBottom: 1, // Add margin at the bottom
+          }}
+        />
+        <Typography variant="h6" component="h5" color="white">
+          Lĩnh vực 1
+        </Typography>
+      </Box>
+      <Box
+        component="article"
+        sx={{
+          px: 4,
+          py: 2, // Add padding top and bottom
+          textAlign: "center", // Center the content
+          fontSize: "0.8rem", // Adjust the font size as needed
+        }}
+      >
+        <MapsHomeWorkOutlinedIcon
+          sx={{
+            fontSize: 50, // Adjust the icon size
+            color: "orange",
+            marginBottom: 1, // Add margin at the bottom
+          }}
+        />
+        <Typography variant="h6" component="h5" color="white">
+          Lĩnh vực 1
+        </Typography>
+      </Box>
+    </Stack>
+    
+  );
+};
 
 export default GetStarted;

@@ -10,6 +10,7 @@ const FooterTitle = ({ text }) => {
       fontWeight: '700',
       textTransform: 'capitalize',
       pb: 1,
+      color:"white"
     }}
     >
       { text }

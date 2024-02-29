@@ -1,96 +1,56 @@
-import React from 'react'
-import {
-    AppBar,
-    Toolbar,
-    Box,
-    List,
-    ListItem,
-    Typography, 
-    styled,
-    ListItemButton,
-    ListItemText,
-} from '@mui/material';
-// menu
-import DrawerItem from './DrawerItem';
-// rotas
-import { Link } from 'react-router-dom';
-
-
-// personalizacao
-const StyledToolbar = styled(Toolbar) ({
-    display: 'flex',
-    justifyContent: 'space-between',
+import { AppBar, Box, Toolbar, Typography, styled } from "@mui/material";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import DrawerItem from "./DrawerItem";
+const StyledToolbar = styled(Toolbar)({
+  display: "flex",
+  justifyContent: "space-between",
 });
-
-const ListMenu = styled(List)(({ theme }) => ({
-    display: 'none',
-    [theme.breakpoints.up("sm")] : {
-        display: "flex",
-    },
-}));
-
-//rotas
-const itemList = [
-    {
-      text: "Home",
-      to: "/" 
-    },
-    {
-      text: "About",
-      to: "/about"
-    },
-    {
-        text: "Contact",
-        to: "/contact"
-    }
-];
-
-
 const Navbar = () => {
-    
-    return (
-        <AppBar 
-        component="nav" 
-        position="sticky"
-        sx={{ 
-            backgroundColor: 'orange', 
-        }}
-        elevation={0}
-        >
-            <StyledToolbar>
-                <Typography
-                variant="h6"
-                component="h2"
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      const navbar = document.getElementById("navbar");
 
-                >
-                    HBSales
-                </Typography>
-                <Box sx={{display: { xs: 'block', sm: 'none' } }}>
-                    <DrawerItem /> 
-                </Box>
-                <ListMenu>
-                    {itemList.map( ( item ) => {
-                        const { text } = item;
-                        return(
-                            <ListItem key={text}>
-                                <ListItemButton component={Link} to={item.to}
-                                sx={{
-                                    color: '#fff',
-                                    "&:hover": {
-                                        backgroundColor: 'transparent',
-                                        color: '#1e2a5a',
-                                    }
-                                }}
-                                >
-                                    <ListItemText primary={text} />
-                                </ListItemButton>
-                            </ListItem>
-                        )
-                    })}
-                </ListMenu>
-            </StyledToolbar>
-        </AppBar>
-    )
-}
+      if (navbar) {
+        if (offset > 50) {
+          navbar.style.transform = "translateY(0)";
+        } else {
+          navbar.style.transform = "translateY(-100%)";
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return (
+    <AppBar
+      id="navbar" // Đặt id để truy cập thanh navbar trong handleScroll
+      component="nav"
+      position="sticky"
+      sx={{
+        backgroundColor: "#1e2a5a",
+        transition: "transform 0.3s",
+      }}
+      elevation={0}
+    >
+      <StyledToolbar>
+        <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+          <Typography variant="h6" component="h2">
+            Logo
+          </Typography>
+        </Link>
+        <Box sx={{ display: { xs: "block", sm: "none" } }}>
+          <DrawerItem />
+        </Box>
+      </StyledToolbar>
+    </AppBar>
+  );
+};
 
 export default Navbar;

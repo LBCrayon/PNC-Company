@@ -1,23 +1,28 @@
-import React from'react';
+import React from "react";
 //rotas
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 //pages
-import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Home from "./pages/Home";
 //componentes
-import Navbar from './components/Navbar';
-import Footer from './components/Footer/Footer';
+import Footer from "./components/Footer/Footer";
+import Business from "./pages/Business";
+import Project from "./pages/Project";
+import AboutDetail from "./pages/AboutDetail";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Navbar />
+        {/* <Navbar /> */}
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/contact' element={<Contact />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/business" element={<Business />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/project" element={<Project />} />
+          <Route path="/aboutdetail" element={<AboutDetail />} />
         </Routes>
       </BrowserRouter>
       <Footer />

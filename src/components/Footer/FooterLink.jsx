@@ -1,26 +1,23 @@
-import { Link } from '@mui/material'
-import React from 'react'
+import { Link, Typography } from "@mui/material";
+import React from "react";
 
 const FooterLink = ({ text }) => {
   return (
-    <Link 
-    href="#"
-    variant='p'
-    component='a'
-    sx={{
-      fontSize: '0.9rem',
-      fontWeight: '400',
-      textDecoration: 'none',
-      color: '#414141',
-      textTransform: 'capitalize',
-      "&:hover": {
-        color: '#1c2859',
-      }
-    }}
+    <Typography
+      variant="p"
+      component="a"
+      sx={{
+        fontSize: "0.9rem",
+        fontWeight: "400",
+        textDecoration: "none",
+        textTransform: "capitalize",
+        color: "white",
+        maxWidth: "60%",
+      }}
     >
       {text}
-    </Link>
-  )
-}
+    </Typography>
+  );
+};
 
-export default FooterLink
+export default FooterLink;
