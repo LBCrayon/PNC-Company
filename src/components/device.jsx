@@ -1,8 +1,7 @@
+import { Box, Stack, Typography } from "@mui/material";
 import React, { useState } from "react";
-import { Typography, Box, Stack } from "@mui/material";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import Title from "./Title";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const Device = () => {
   const [currentIndex, setCurrentIndex] = useState();

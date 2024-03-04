@@ -4,13 +4,12 @@ import { Link } from "react-router-dom";
 
 import {
   AppBar,
-  Button,
   ListItem,
   ListItemButton,
   ListItemText,
-  Toolbar,
+  Toolbar
 } from "@mui/material";
-
+import { motion } from "framer-motion";
 const ListMenu = styled("ul")({
   listStyle: "none",
   padding: 0,
@@ -37,10 +36,14 @@ const itemList = [
   },
   {
     text: "Liên hệ",
-    to: "/",
+    to: "/contact",
   },
 ];
 const itemList2 = [
+  {
+    text: "Trang chủ",
+    to: "/",
+  },
   {
     text: "Về chúng tôi",
     to: "/about",
@@ -55,7 +58,7 @@ const itemList2 = [
   },
   {
     text: "Tin tức",
-    to: "/",
+    to: "/news",
   },
 ];
 const Content = () => {
@@ -102,47 +105,35 @@ const Content = () => {
             <Grid item xs={4}>
               <StyledToolbar>
                 <Link to="/" style={linkStyle}>
-                  <Typography
-                    sx={{ color: "#fff" }}
-                    variant="h4"
-                    component="h2"
-                    color="textPrimary"
+                  <motion.div
+                    initial={{ opacity: 0, y: -50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1.5 }}
                   >
-                    Phương Nam
-                  </Typography>
+                    {" "}
+                    <img
+                  width={"140"}
+                  height={"140px"}
+                  src="https://firebasestorage.googleapis.com/v0/b/finedelivery-880b6.appspot.com/o/PNC%2FLOGO%20-%20PNC%20-%20NEW.png?alt=media&token=1f635abc-15cb-4a83-bda0-f7b76c650309"
+                />
+                  </motion.div>
                 </Link>
               </StyledToolbar>
             </Grid>
+
             <Grid item xs={12} paddingRight={16}>
-              <Stack
-                justifyContent="flex-end"
-                alignItems="flex-end"
-                spacing={2}
+              <motion.div
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.5 }}
               >
-                <ListMenu>
-                  {itemList.map((item) => (
-                    <ListItem key={item.text}>
-                      <StyledListItemButton
-                        component={Link}
-                        to={item.to}
-                        sx={{
-                          color: "#fff",
-                          fontWeight: "bold",
-                          whiteSpace: "nowrap", // Prevent text from wrapping
-                          "&:hover": {
-                            backgroundColor: "transparent",
-                            color: "orange",
-                          },
-                        }}
-                      >
-                        <ListItemText primary={item.text} />
-                      </StyledListItemButton>
-                    </ListItem>
-                  ))}
-                </ListMenu>
-                <Stack direction="row" spacing={2}>
+                <Stack
+                  justifyContent="flex-end"
+                  alignItems="flex-end"
+                  spacing={2}
+                >
                   <ListMenu>
-                    {itemList2.map((item) => (
+                    {itemList.map((item) => (
                       <ListItem key={item.text}>
                         <StyledListItemButton
                           component={Link}
@@ -162,71 +153,100 @@ const Content = () => {
                       </ListItem>
                     ))}
                   </ListMenu>
-                  <SearchIcon
-                    sx={{
-                      paddingTop: "15px",
-                      fontSize: 30,
-                      color: "#fff",
-                      fontWeight: "bold",
-                      "&:hover": {
-                        backgroundColor: "transparent",
-                        color: "orange",
-                      },
-                    }}
-                  />
+                  <Stack direction="row" spacing={2}>
+                    <ListMenu>
+                      {itemList2.map((item) => (
+                        <ListItem key={item.text}>
+                          <StyledListItemButton
+                            component={Link}
+                            to={item.to}
+                            sx={{
+                              color: "#fff",
+                              fontWeight: "bold",
+                              whiteSpace: "nowrap", // Prevent text from wrapping
+                              "&:hover": {
+                                backgroundColor: "transparent",
+                                color: "orange",
+                              },
+                            }}
+                          >
+                            <ListItemText primary={item.text} />
+                          </StyledListItemButton>
+                        </ListItem>
+                      ))}
+                    </ListMenu>
+                    <SearchIcon
+                      sx={{
+                        paddingTop: "15px",
+                        fontSize: 30,
+                        color: "#fff",
+                        fontWeight: "bold",
+                        "&:hover": {
+                          backgroundColor: "transparent",
+                          color: "orange",
+                        },
+                      }}
+                    />
+                  </Stack>
                 </Stack>
-              </Stack>
+              </motion.div>
             </Grid>
-          </Grid>
-          <Box sx={{ paddingLeft: 40, paddingTop: 15 }} component="section">
-            <Typography
-              variant="h6"
-              component="h6"
-              sx={{
-                fontWeight: 500,
-                color: "#fff",
-                fontSize: "16px",
-                "&:hover": {
-                  backgroundColor: "transparent",
-                  color: "orange",
-                },
-              }}
-            >
-              VỀ CHÚNG TÔI
-            </Typography>
-            <Typography
-              variant="h5"
-              component="h5"
-              sx={{
-                fontWeight: 900,
-                color: "#fff",
-                fontSize: "50px",
-                "&:hover": {
-                  backgroundColor: "transparent",
-                  color: "orange",
-                },
-              }}
-            >
-              PNC
-            </Typography>
+          </Grid>{" "}
+          <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.5 }}
+          >
+            <Box sx={{ paddingLeft: 40, paddingTop: 15 }} component="section">
+              <Typography
+                variant="h6"
+                component="h6"
+                sx={{
+                  fontWeight: 500,
+                  color: "#fff",
+                  fontSize: "16px",
+                  "&:hover": {
+                    backgroundColor: "transparent",
+                    color: "orange",
+                  },
+                }}
+              >
+                VỀ CHÚNG TÔI
+              </Typography>
+              <Typography
+                variant="h5"
+                component="h5"
+                sx={{
+                  fontWeight: 900,
+                  color: "#fff",
+                  fontSize: "50px",
+                  "&:hover": {
+                    backgroundColor: "transparent",
+                    color: "orange",
+                  },
+                }}
+              >
+                PNC
+              </Typography>
 
-            <Typography
-              variant="h5"
-              component="h5"
-              sx={{
-                fontWeight: 900,
-                color: "#fff",
-                fontSize: "50px",
-                "&:hover": {
-                  backgroundColor: "transparent",
-                  color: "orange",
-                },
-              }}
-            >
-              CÔNG TY CỔ PHẦN XÂY DỰNG <br />
-              CÔNG NGHIỆP DỊCH VỤ VIỆT NAM
-            </Typography>
-          </Box>
+              <Typography
+                variant="h5"
+                component="h5"
+                sx={{
+                  fontWeight: 900,
+                  color: "#fff",
+                  fontSize: "50px",
+                  "&:hover": {
+                    backgroundColor: "transparent",
+                    color: "orange",
+                  },
+                }}
+              >
+                CÔNG TY CỔ PHẦN XÂY DỰNG <br />
+                CÔNG NGHIỆP DỊCH VỤ VIỆT NAM
+              </Typography>
+            </Box>
+          </motion.div>
         </CustomAppBar>
       </CustomBox>
     </Stack>

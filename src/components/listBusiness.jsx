@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Grid } from "@mui/material";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
-const LisBusiness = () => {
+const ListBusiness = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const handleMouseOver = (index) => {
@@ -139,4 +139,4 @@ const LisBusiness = () => {
   );
 };
 
-export default LisBusiness;
+export default ListBusiness;

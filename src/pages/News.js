@@ -1,14 +1,14 @@
 import React from "react";
-import Details from "../components/Details";
 import HeaderCustomer from "../components/HeaderCustomer";
+import ListNew from "../components/ListNew";
 
-const Contact = () => {
+const News = () => {
   return (
     <>
       <HeaderCustomer />
-      <Details />
+      <ListNew />
     </>
   );
 };
 
-export default Contact;
+export default News;

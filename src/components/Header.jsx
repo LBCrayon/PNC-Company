@@ -41,10 +41,14 @@ const itemList = [
   },
   {
     text: "Liên hệ",
-    to: "/",
+    to: "/contact",
   },
 ];
 const itemList2 = [
+  {
+    text: "Trang chủ",
+    to: "/",
+  },
   {
     text: "Về chúng tôi",
     to: "/about",
@@ -59,7 +63,7 @@ const itemList2 = [
   },
   {
     text: "Tin tức",
-    to: "/",
+    to: "/news",
   },
 ];
 
@@ -117,24 +121,27 @@ const Header = () => {
       rel: 0,
       showinfo: 0,
       quality: "hd2160", // Chọn chất lượng cao nhất
-      cc_lang_pref: 'invalid' // Ngôn ngữ không được hỗ trợ
+      cc_lang_pref: "invalid", // Ngôn ngữ không được hỗ trợ
     },
   };
-  
+
   return (
     <CustomBox component="header">
       <CustomAppBar component="nav" position="sticky" elevation={0}>
         <Grid container spacing={2} columns={16}>
           <Grid item xs={4}>
             <StyledToolbar>
-              <Typography
-                sx={{ color: "#fff" }}
-                variant="h4"
-                component="h2"
-                color="textPrimary"
+              <motion.div
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.5 }}
               >
-                Logo
-              </Typography>
+                <img
+                  width={"140"}
+                  height={"140px"}
+                  src="https://firebasestorage.googleapis.com/v0/b/finedelivery-880b6.appspot.com/o/PNC%2FLOGO%20-%20PNC%20-%20NEW.png?alt=media&token=1f635abc-15cb-4a83-bda0-f7b76c650309"
+                />
+              </motion.div>
             </StyledToolbar>
           </Grid>
           <Grid item xs={12} paddingRight={16}>
@@ -187,7 +194,10 @@ const Header = () => {
                             },
                           }}
                         >
-                          <ListItemText primary={item.text} />
+                          <ListItemText
+                            sx={{ color: "#fff", fontWeight: "bold" }}
+                            primary={item.text}
+                          />
                         </StyledListItemButton>
                       </ListItem>
                     ))}
@@ -197,7 +207,7 @@ const Header = () => {
                       paddingTop: "15px",
                       fontSize: 30,
                       color: "#fff",
-                      fontWeight: "bold",
+                      fontWeight: 900,
                       "&:hover": {
                         backgroundColor: "transparent",
                         color: "orange",
@@ -216,14 +226,14 @@ const Header = () => {
             sx={{
               fontWeight: 900,
               color: "#fff",
-              fontSize: "90px",
+              fontSize: "120px",
               "&:hover": {
                 backgroundColor: "transparent",
                 color: "orange",
               },
             }}
           >
-            Phương Nam
+            PNC
           </AnimatedTypography>
 
           <AnimatedTypography
@@ -233,14 +243,14 @@ const Header = () => {
               py: 2.5,
               lineHeight: 1.6,
               color: "#fff",
-              fontSize: "35px",
+              fontSize: "45px",
               "&:hover": {
                 backgroundColor: "transparent",
                 color: "orange",
               },
             }}
           >
-            "One Solution - Countless Capabilities"
+            "Nhà thầu Viễn Thông chuyên nghiệp!"
           </AnimatedTypography>
 
           <Box>

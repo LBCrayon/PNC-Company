@@ -28,44 +28,57 @@ const AboutDetails = () => {
                 py: 2,
               }}
             >
-              GIỚI THIỆU VỀ PNC
+              THƯ NGÕ
             </Typography>
             <Typography
               textAlign={"justify"}
               sx={{
                 fontSize: "18px",
-                color:"grey"
+                color: "grey",
               }}
             >
-              Công ty Cổ phần Xây dựng Công nghiệp Dịch vụ Việt Nam (IBS) được
-              thành lập năm 2006. Chúng tôi chuyên thiết kế, cung cấp, xây dựng,
-              lắp đặt cho các dự án dân dụng và công nghiệp; sản xuất và lắp đặt
-              các thiết bị cơ khí, bể chứa, đường ống cao áp cho các nhà máy
-              công nghiệp; cung cấp các giải pháp tự động hóa, giải pháp năng
-              lượng mới, năng lượng tái tạo, giải pháp tiết kiệm năng lượng;
-              dịch vụ quản lý và vận hành; xây dựng mới và sửa chữa tàu lên tới
-              10.000 dwt và dịch vụ cảng; cung cấp thiết bị điều khiển, thiết bị
-              chiếu sáng, hệ thống bảo vệ, camera giám sát, thiết bị phòng cháy
-              chữa cháy, vv (IBS là đối tác phân phối cho các sản phẩm của những
-              thương hiệu hàng đầu thế giới như Honeywell, ABB, Tyco, Lefa). IBS
-              sở hữu hệ thống 2 văn phòng nội địa (Hà Nội, Hồ Chí Minh) và hoạt
-              động tại các thị trường quốc tế bao gồm Singapore và Campuchia. Là
-              người tiên phong trong tự động hóa, IBS không ngừng nỗ lực để mang
-              lại những công nghệ tiên tiến nhất cũng như nghiên cứu, phát triển
-              và áp dụng những công nghệ này cho phù hợp với điều kiện hiện tại
-              ở Việt Nam. Để đạt được điều này, nhiệm vụ chính của IBS là trở
-              thành nhà tích hợp hệ thống tổng thể với các sản phẩm và dịch vụ
-              giúp kéo dài tuổi thọ của dự án, tiết kiệm chi phí và cải thiện sự
-              an toàn của tất cả các dự án – cho dù đó là nhà máy điện, bệnh
-              viện, tòa nhà văn phòng, trung tâm mua sắm, căn hộ cao cấp hoặc
-              thậm chí là nhà riêng của bạn. Từ năm 2015, IBS đã tham gia các dự
-              án xây dựng dân dụng và công nghiệp. Chỉ sau một thời gian ngắn,
-              IBS đã khẳng định vị thế và thương hiệu của mình bằng cách tham
-              gia với tư cách là nhà thầu EPC của một loạt các dự án thuộc nhiều
-              lĩnh vực khác nhau như xây dựng các tòa nhà cao tầng, nhà thầu EPC
-              cho các dự án thép, khai thác khoáng sản và điện gió, v.v. IBS với
-              năng lực toàn diện, đã thực hiện hơn 200 dự án lớn tại Việt Nam và
-              trên thế giới.
+              Công ty TNHH Xây Lắp Kỹ Thuật Phương Nam trân trọng gửi tới Quý
+              Công ty lời chúc sức khỏe, hạnh phúc, thịnh vượng và thành công.
+              <br />
+              <br />
+              Hạ tầng viễn thông cho các tòa nhà cao tầng là nhu cầu cấp thiết
+              phục vụ cho khách hàng sinh sống và làm việc tại tòa nhà, là nền
+              tảng để triển khai cách mạng công nghệ 4.0. Các dịch vụ cơ bản
+              nhất như Internet tốc độ cao, truyền hình cáp, di động 2G/3G/4G và
+              tương lai là WiMAX, Video On Demand (VoD)… cần được cung cấp một
+              cách đồng bộ với các tiêu chí như khách hàng lựa chọn nhà cung cấp
+              dịch vụ linh hoạt, có thể tích hợp nhiều nhà cung cấp dịch vụ.
+              <br /> <br />
+              Với bề dày kinh nghiệm hơn 10 năm hoạt động trong ngành Viễn Thông
+              và kinh nghiệm đã và đang triển khai các dịch vụ viễn thông cho
+              khoảng 300 tòa nhà cao tầng trên khắp khu vực Miền Nam, Công ty
+              Phương Nam xin được giới thiệu Phương án Hợp tác triển khai hệ
+              thống cáp quang đa dịch vụ tốc độ cao AON/GPON, hệ thống truyền
+              hình cáp CATV và hệ thống mở rộng phủ sóng di động trong tòa nhà
+              cao tầng - IBS. Việc ứng dụng các hệ thống này sẽ mang đến cho tòa
+              nhà của Quý Công ty các dịch vụ truyền hình cáp và Internet tốc độ
+              cao, chất lượng phủ sóng di động tốt nhất, đem lại sự hài lòng cao
+              nhất cho các khách hàng sinh sống và làm việc trong toà nhà.
+              <br /> <br /> Các hệ thống cáp quang AON/GPON, hệ thống truyền
+              hình cáp và hệ thống IBS nói trên sẽ được Công ty Phương Nam đảm
+              nhận đầu tư, triển khai, lắp đặt đồng bộ và quản lý vận hành với
+              các tiêu chí: <br /> <br />
+              - Cung cấp dịch vụ viễn thông tích hợp tốc độ cao, ổn định với các
+              công nghệ tiên tiến nhất; <br />
+              - Đường truyền bảo mật cao nhất và khả năng mở rộng băng thông
+              không hạn chế; Đáp ứng băng thông rộng, dùng chung cho tất cả các
+              nhà cung cấp dịch vụ thông tin di động như Viettel, Vinaphone,
+              Mobile phone, Vietnamobile, …;
+              <br />- Tương thích với các công nghệ thông tin di động GSM,
+              WCDMA, LTE và các công nghệ tương lai;
+              <br /> <br /> Việc đầu tư ứng dụng các hệ thống này sẽ góp phần
+              hoàn thiện, nâng cao chất lượng phục vụ của của tòa nhà đối với
+              các khách hàng sinh sống và làm việc trong tòa nhà, do vậy Công ty
+              Phương Nam rất mong nhận được sự hợp tác và hỗ trợ của Quý Công ty
+              trong việc triển khai, khai thác hệ thống. <br />
+              <br />
+              Trân trọng! <br />
+              GIÁM ĐỐC NGUYỄN THANH LỘC
             </Typography>
           </Grid>
           <Grid item xs={6} sm={6} md={6}>
@@ -79,29 +92,29 @@ const AboutDetails = () => {
                 py: 2,
               }}
             >
-              “CHÚNG TÔI LÀM VIỆC TRÊN QUY MÔ LỚN”
+              “GIỚI THIỆU VỀ PNC”
             </Typography>
             <Typography
               textAlign={"justify"}
               sx={{
                 fontSize: "18px",
-                color:"grey"
+                color: "grey",
               }}
             >
-              Năm 2016 chứng kiến những cột mốc lịch sử khi IBS trúng thầu cùng
-              lúc 3 dự án có quy mô lớn và đầy thách thức: IBS trở thành Tổng
-              Thầu EPC của công trình “Tòa nhà Summit” – được đánh giá là một
-              trong những tòa nhà thông minh nhất Việt Nam khi hoàn thiện, với
-              quy mô vốn đầu tư lên tới hơn 50 triệu USD. IBS cũng đồng thời
-              được trao hợp đồng tổng thầu EPC cho dự án “Trang trại phong điện
-              Tây Nguyên” – dự án thứ 4 và là dự án điện gió lớn nhất từng được
-              xây dựng tại Việt Nam, sử dụng công nghệ và hệ thống tuabin tiên
-              tiến nhất thế giới được cung cấp bởi GE, với tổng mức đầu tư cho
-              toàn quy mô dự án lên tới 560 triệu USD. Bên cạnh đó, IBS cũng
-              được tin tưởng trao vai trò Tổng thầu EPC cho dự án vốn ODA trọng
-              điểm “Nâng cấp hệ thống cấp thoát nước thành phố HCM” (Sawaco),
-              được tài trợ vốn bởi ngân hàng phát triển Châu Á (ADB) với tổng
-              vốn đầu tư toàn dự án lên tới 150 triệu USD.
+              CÔNG TY TNHH XÂY LẮP KỸ THUẬT PHƯƠNG NAM CÔNG TY HÀNG ĐẦU VỀ HỢP
+              TÁC ĐẦU TƯ HẠ TẦNG VIỄN THÔNG, TƯ VẤN, CUNG CẤP GIẢI PHÁP AN NINH
+              TÍCH HỢP HỆ THỐNG VÀ HỆ THỐNG ĐIỆN NHẸ. <br /> <br />
+              Công ty Phương Nam là công ty hàng đầu trong lĩnh vực hợp tác đầu
+              tư hạ tầng viễn thông, một trong những công ty tư vấn, cung cấp
+              giải pháp an ninh tích hợp hệ thống cho các công trình thương mại,
+              công nghiệp, dân dụng và cơ sở hạ tầng. <br /> <br /> Thành lập
+              vào năm 2009, cho đến nay Công ty đã thực hiện rất nhiều công
+              trình trên khắp khu vực Miền Nam, trong đó có nhiều công trình nổi
+              tiếng và mang tầm vóc lớn nhất Việt Nam. <br /> <br />
+              Công ty Phương Nam luôn đảm bảo tính hiệu quả trong các dự án hợp
+              tác đầu tư hạ tầng viễn thông, luôn đảm bảo tiến độ công trình,
+              chất lượng và giá cả hợp lý trong các dự án cung cấp giải pháp an
+              ninh tích hợp hệ thống.
             </Typography>
           </Grid>
           <Grid item xs={6} sm={6} md={6}>
@@ -116,30 +129,27 @@ const AboutDetails = () => {
               }}
             >
               {" "}
-              “NĂNG LỰC CẠNH TRANH TOÀN DIỆN”
+              “THÔNG ĐIỆP TỪ GIÁM ĐỐC”
             </Typography>
             <Typography
               textAlign={"justify"}
               sx={{
                 fontSize: "18px",
-                color:"grey"
+                color: "grey",
               }}
             >
-              Cho tới thời điểm hiện tại, IBS vẫn là tổng thầu EPC Việt Nam đầu
-              tiên có khả năng triển khai toàn bộ phạm vi EPC từ thiết kế kỹ
-              thuật, mua sắm, lắp đặt, và vận hành nhà máy điện gió quy mô lớn
-              nhất Đông Nam Á tại thời điểm trúng thầu. Điều đó đánh dấu sự kỳ
-              vọng cho sự phát triển và cam kết của IBS với hàng loạt các dự án
-              trong lĩnh vục năng lượng tái tạo dự kiến ​​sẽ được thực hiện
-              trong tương lai gần. Bên cạnh đó, IBS là một công ty hàng đầu tại
-              Việt Nam trong lĩnh vực cơ khí, đóng tàu và thiết bị siêu trường
-              siêu trọng cho các dự án công nghiệp và xuất khẩu. IBS Lisemco đã
-              xây dựng mối quan hệ hợp tác và hợp tác với hầu hết các công ty
-              công nghiệp lớn của thế giới như GE, Siemens, Hyundai, Nippon,
-              Thyssenkrupp, và các sản phẩm của IBS Lisemco đã được xuất khẩu
-              sang hầu hết các thị trường quốc tế như Nhật Bản, Châu Âu, Châu
-              Mỹ, Trung Việt Nam, Úc, vv và được đánh giá cao bởi các tổ chức
-              chất lượng và khách hàng quốc tế.
+              Việt Nam đang trên đường phát triển mạnh mẽ của nền kinh tế thị
+              trường và hội nhập vào nền kinh tế thế giới, việc xây dựng cơ bản
+              hạ tầng cơ sở cũng như việc đầu tư và phát triển các cao ốc, trung
+              tâm thương mại, chung cư, khu dân cư, khu công nghiệp đang là một
+              vấn đề quan trọng và cấp thiết. <br /> <br />
+              Nhiều dự án xây dựng cơ bản và hạ tầng kỹ thuật đang được nhanh
+              chóng triển khai trên toàn quốc. <br /> <br />
+              Hạ tầng viễn thông - giải pháp băng thông rộng (Hệ Thống Phủ sóng
+              tín hiệu di động, HT Thông Tin _ Liên Lạc, Truyền hình cáp), Hệ
+              thống điện nhẹ (Hệ thống mạng, tổng đài, nhà thông minh) &Hệ thống
+              An Ninh tích hợp trong các công trình là một nhu cầu hết sức cấp
+              thiết.
             </Typography>
           </Grid>
         </Stack>

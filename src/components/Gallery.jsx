@@ -3,6 +3,9 @@ import React, { useEffect, useState } from "react";
 import { Box, Grid, Stack, Typography } from "@mui/material";
 // carousel
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { motion } from "framer-motion";
+import { InView } from "react-intersection-observer";
+
 // components
 const useCounter = (target, interval) => {
   const [count, setCount] = useState(0);
@@ -88,71 +91,95 @@ const Gallery = () => {
     >
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         <Grid item xs={6}>
-          <Typography
-            variant="h5"
-            component="h5"
-            sx={{
-              pb: 2,
-              fontWeight: 400,
-              color: "#1e2a5a",
-              fontSize: "45px",
-              textAlign: "justify",
-            }}
-          >
-            "GIỚI THIỆU PNC”
-          </Typography>
-          <Typography
-            sx={{
-              fontWeight: 400,
-              color: "#1e2a5a",
-              fontSize: "16px",
-              textAlign: "justify",
-            }}
-          >
-            {" "}
-            Công ty Cổ phần Xây dựng Công nghiệp Dịch vụ Việt Nam (IBS) tiền
-            thân là Công ty Cổ phần Giải pháp Tòa nhà Thông minh, được thành lập
-            năm 2006. Chúng tôi chuyên thiết kế, cung cấp, xây dựng, lắp đặt cho
-            các dự án dân dụng và công nghiệp; sản xuất và lắp đặt các thiết bị
-            cơ khí, bể chứa, đường ống cao áp cho các nhà máy công nghiệp; cung
-            cấp các giải pháp tự động hóa, giải pháp năng lượng mới, năng lượng
-            tái tạo, giải pháp tiết kiệm năng lượng; dịch vụ quản lý và vận
-            hành; xây dựng mới và sửa chữa tàu lên tới 10.000 dwt và dịch vụ
-            cảng; cung cấp thiết bị điều khiển, thiết bị chiếu sáng, hệ thống
-            bảo vệ, camera giám sát, thiết bị phòng cháy chữa cháy, vv (IBS là
-            đối tác phân phối cho các sản phẩm của những thương hiệu hàng đầu
-            thế giới như Honeywell, ABB, Tyco, Lefa).
-            <br />
-            IBS sở hữu hệ thống 2 văn phòng nội địa (Hà Nội, Hồ Chí Minh) và
-            hoạt động tại các thị trường quốc tế bao gồm Singapore và Campuchia.
-            <br />
-            IBS là tổng thầu EPC Việt Nam đầu tiên có khả năng triển khai toàn
-            bộ phạm vi EPC từ thiết kế kỹ thuật, mua sắm, lắp đặt, và vận hành
-            nhà máy điện gió quy mô lớn nhất Đông Nam Á tại thời điểm trúng
-            thầu. Điều đó đánh dấu sự kỳ vọng cho sự phát triển và cam kết của
-            IBS với hàng loạt các dự án trong lĩnh vực năng lượng tái tạo dự
-            kiến sẽ được thực hiện trong tương lai gần.
-          </Typography>
+          <InView triggerOnce>
+            {({ inView, ref }) => (
+              <motion.div
+                ref={ref}
+                initial={{ opacity: 0, y: -100 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 1.5 }}
+              >
+                <Typography
+                  variant="h5"
+                  component="h5"
+                  sx={{
+                    pb: 2,
+                    fontWeight: 400,
+                    color: "#1e2a5a",
+                    fontSize: "45px",
+                    textAlign: "justify",
+                  }}
+                >
+                  "GIỚI THIỆU PNC”
+                </Typography>
+                <Typography
+                  sx={{
+                    fontWeight: 400,
+                    color: "#1e2a5a",
+                    fontSize: "16px",
+                    textAlign: "justify",
+                  }}
+                >
+                  {" "}
+                  Công ty Cổ phần Xây dựng Công nghiệp Dịch vụ Việt Nam (IBS)
+                  tiền thân là Công ty Cổ phần Giải pháp Tòa nhà Thông minh,
+                  được thành lập năm 2006. Chúng tôi chuyên thiết kế, cung cấp,
+                  xây dựng, lắp đặt cho các dự án dân dụng và công nghiệp; sản
+                  xuất và lắp đặt các thiết bị cơ khí, bể chứa, đường ống cao áp
+                  cho các nhà máy công nghiệp; cung cấp các giải pháp tự động
+                  hóa, giải pháp năng lượng mới, năng lượng tái tạo, giải pháp
+                  tiết kiệm năng lượng; dịch vụ quản lý và vận hành; xây dựng
+                  mới và sửa chữa tàu lên tới 10.000 dwt và dịch vụ cảng; cung
+                  cấp thiết bị điều khiển, thiết bị chiếu sáng, hệ thống bảo vệ,
+                  camera giám sát, thiết bị phòng cháy chữa cháy, vv (IBS là đối
+                  tác phân phối cho các sản phẩm của những thương hiệu hàng đầu
+                  thế giới như Honeywell, ABB, Tyco, Lefa).
+                  <br />
+                  IBS sở hữu hệ thống 2 văn phòng nội địa (Hà Nội, Hồ Chí Minh)
+                  và hoạt động tại các thị trường quốc tế bao gồm Singapore và
+                  Campuchia.
+                  <br />
+                  IBS là tổng thầu EPC Việt Nam đầu tiên có khả năng triển khai
+                  toàn bộ phạm vi EPC từ thiết kế kỹ thuật, mua sắm, lắp đặt, và
+                  vận hành nhà máy điện gió quy mô lớn nhất Đông Nam Á tại thời
+                  điểm trúng thầu. Điều đó đánh dấu sự kỳ vọng cho sự phát triển
+                  và cam kết của IBS với hàng loạt các dự án trong lĩnh vực năng
+                  lượng tái tạo dự kiến sẽ được thực hiện trong tương lai gần.
+                </Typography>
+              </motion.div>
+            )}
+          </InView>
         </Grid>
         <Grid item xs={6}>
-          <Grid
-            container
-            spacing={2}
-            justifyContent="center"
-            alignItems="center"
-          >
-            {counterItems.map((item, index) => (
-              <Grid key={index} item xs={12} sm={6}>
-                <Typography variant="h6" style={outlinedTextStyle}>
-                  <CounterBox
-                    count={item.count}
-                    label={item.label}
-                    text={item.text}
-                  />
-                </Typography>
-              </Grid>
-            ))}
-          </Grid>
+          <InView triggerOnce>
+            {({ inView, ref }) => (
+              <motion.div
+                ref={ref}
+                initial={{ opacity: 0, y: -100 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 1.5 }}
+              >
+                <Grid
+                  container
+                  spacing={2}
+                  justifyContent="center"
+                  alignItems="center"
+                >
+                  {counterItems.map((item, index) => (
+                    <Grid key={index} item xs={12} sm={6}>
+                      <Typography variant="h6" style={outlinedTextStyle}>
+                        <CounterBox
+                          count={item.count}
+                          label={item.label}
+                          text={item.text}
+                        />
+                      </Typography>
+                    </Grid>
+                  ))}
+                </Grid>
+              </motion.div>
+            )}
+          </InView>
         </Grid>
       </Grid>
     </Stack>

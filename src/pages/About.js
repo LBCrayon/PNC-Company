@@ -7,6 +7,7 @@ import Chungchi from "../components/chungchi";
 import Device from "../components/device";
 import Slider from "../components/Slider";
 import Navbar from "../components/Navbar";
+import BeforeFooter from "../components/BeforeFooter";
 
 const About = () => {
   return (
@@ -19,6 +20,7 @@ const About = () => {
       <Chungchi />
       <Device />
       <Slider />
+      <BeforeFooter />
     </>
   );
 };

@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 // mui
-import { Typography, Box, Stack } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 // carousel
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 // components
 import Title from "./Title";
-import Paragraph from "./Paragraph";
 
 const Chungchi = () => {
   const [currentIndex, setCurrentIndex] = useState();

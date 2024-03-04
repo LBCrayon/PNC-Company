@@ -41,9 +41,11 @@ const Navbar = () => {
     >
       <StyledToolbar>
         <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-          <Typography variant="h6" component="h2">
-            Logo
-          </Typography>
+          <img
+            width={"140"}
+            height={"140px"}
+            src="https://firebasestorage.googleapis.com/v0/b/finedelivery-880b6.appspot.com/o/PNC%2FLOGO%20-%20PNC%20-%20NEW.png?alt=media&token=1f635abc-15cb-4a83-bda0-f7b76c650309"
+          />
         </Link>
         <Box sx={{ display: { xs: "block", sm: "none" } }}>
           <DrawerItem />

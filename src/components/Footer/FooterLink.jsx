@@ -12,10 +12,10 @@ const FooterLink = ({ text }) => {
         textDecoration: "none",
         textTransform: "capitalize",
         color: "white",
-        maxWidth: "60%",
+        maxWidth: "80%",
       }}
     >
-      {text}
+      <span style={{ color: "orange", fontSize: "20px" }}></span> {text}
     </Typography>
   );
 };
