@@ -7,7 +7,7 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
-  Toolbar
+  Toolbar,
 } from "@mui/material";
 import { motion } from "framer-motion";
 const ListMenu = styled("ul")({
@@ -112,10 +112,10 @@ const Content = () => {
                   >
                     {" "}
                     <img
-                  width={"140"}
-                  height={"140px"}
-                  src="https://firebasestorage.googleapis.com/v0/b/finedelivery-880b6.appspot.com/o/PNC%2FLOGO%20-%20PNC%20-%20NEW.png?alt=media&token=1f635abc-15cb-4a83-bda0-f7b76c650309"
-                />
+                      width={"140"}
+                      height={"140px"}
+                      src="https://firebasestorage.googleapis.com/v0/b/finedelivery-880b6.appspot.com/o/PNC%2FLOGO%20-%20PNC%20-%20NEW.png?alt=media&token=1f635abc-15cb-4a83-bda0-f7b76c650309"
+                    />
                   </motion.div>
                 </Link>
               </StyledToolbar>
@@ -140,15 +140,15 @@ const Content = () => {
                           to={item.to}
                           sx={{
                             color: "#fff",
-                            fontWeight: "bold",
+                            fontSize: "14px",
                             whiteSpace: "nowrap", // Prevent text from wrapping
                             "&:hover": {
                               backgroundColor: "transparent",
-                              color: "orange",
+                              color: "#00a859",
                             },
                           }}
                         >
-                          <ListItemText primary={item.text} />
+                          {item.text}
                         </StyledListItemButton>
                       </ListItem>
                     ))}
@@ -162,15 +162,16 @@ const Content = () => {
                             to={item.to}
                             sx={{
                               color: "#fff",
+                              fontSize: "16px",
                               fontWeight: "bold",
                               whiteSpace: "nowrap", // Prevent text from wrapping
                               "&:hover": {
                                 backgroundColor: "transparent",
-                                color: "orange",
+                                color: "#00a859",
                               },
                             }}
                           >
-                            <ListItemText primary={item.text} />
+                            {item.text}
                           </StyledListItemButton>
                         </ListItem>
                       ))}
@@ -183,7 +184,7 @@ const Content = () => {
                         fontWeight: "bold",
                         "&:hover": {
                           backgroundColor: "transparent",
-                          color: "orange",
+                          color: "#00a859",
                         },
                       }}
                     />
@@ -207,7 +208,7 @@ const Content = () => {
                   fontSize: "16px",
                   "&:hover": {
                     backgroundColor: "transparent",
-                    color: "orange",
+                    color: "#00a859",
                   },
                 }}
               >
@@ -222,7 +223,7 @@ const Content = () => {
                   fontSize: "50px",
                   "&:hover": {
                     backgroundColor: "transparent",
-                    color: "orange",
+                    color: "#00a859",
                   },
                 }}
               >
@@ -238,12 +239,12 @@ const Content = () => {
                   fontSize: "50px",
                   "&:hover": {
                     backgroundColor: "transparent",
-                    color: "orange",
+                    color: "#00a859",
                   },
                 }}
               >
-                CÔNG TY CỔ PHẦN XÂY DỰNG <br />
-                CÔNG NGHIỆP DỊCH VỤ VIỆT NAM
+                CÔNG TY TNHH XÂY LẮP KỸ THUẬT <br />
+                PHƯƠNG NAM
               </Typography>
             </Box>
           </motion.div>

@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 import React from "react";
 import { InView } from "react-intersection-observer";
 import Title from "./Title";
+import BoltIcon from "@mui/icons-material/Bolt";
+import CellTowerIcon from '@mui/icons-material/CellTower';
+import PublicIcon from '@mui/icons-material/Public';
 const GetStarted = () => {
   return (
     <>
@@ -16,7 +19,15 @@ const GetStarted = () => {
         }}
         direction="row"
         divider={<Divider orientation="vertical" flexItem />}
-        Công ty TNHH Xây Lắp Kỹ Thuật Phương Nam
+        Công
+        ty
+        TNHH
+        Xây
+        Lắp
+        Kỹ
+        Thuật
+        Phương
+        Nam
         justifyContent="center"
         alignItems="center"
       >
@@ -58,10 +69,10 @@ const GetStarted = () => {
                   fontSize: "0.8rem", // Adjust the font size as needed
                 }}
               >
-                <MapsHomeWorkOutlinedIcon
+                <CellTowerIcon
                   sx={{
                     fontSize: 50, // Adjust the icon size
-                    color: "orange",
+                    color: "#00a859",
                     marginBottom: 1, // Add margin at the bottom
                   }}
                 />
@@ -90,15 +101,15 @@ const GetStarted = () => {
                   fontSize: "0.8rem", // Adjust the font size as needed
                 }}
               >
-                <MapsHomeWorkOutlinedIcon
+                <BoltIcon
                   sx={{
                     fontSize: 50, // Adjust the icon size
-                    color: "orange",
+                    color: "#00a859",
                     marginBottom: 1, // Add margin at the bottom
                   }}
                 />
                 <Typography variant="h6" component="h5" color="white">
-                 Điện nhẹ
+                  Điện nhẹ
                 </Typography>
               </Box>
             </motion.div>
@@ -125,7 +136,7 @@ const GetStarted = () => {
                 <MapsHomeWorkOutlinedIcon
                   sx={{
                     fontSize: 50, // Adjust the icon size
-                    color: "orange",
+                    color: "#00a859",
                     marginBottom: 1, // Add margin at the bottom
                   }}
                 />
@@ -153,10 +164,10 @@ const GetStarted = () => {
                   fontSize: "0.8rem", // Adjust the font size as needed
                 }}
               >
-                <MapsHomeWorkOutlinedIcon
+                <PublicIcon
                   sx={{
                     fontSize: 50, // Adjust the icon size
-                    color: "orange",
+                    color: "#00a859",
                     marginBottom: 1, // Add margin at the bottom
                   }}
                 />

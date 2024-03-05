@@ -78,7 +78,7 @@ const Header = () => {
     justifyContent: "center",
   });
   const CustomBox = styled(Box)(({ theme }) => ({
-    minHeight: "100vh",
+    minHeight: "96.8vh",
     display: "flex",
     justifyContent: "center",
     paddingTop: theme.spacing(4),
@@ -162,16 +162,20 @@ const Header = () => {
                         component={Link}
                         to={item.to}
                         sx={{
+                          fontSize: "14px",
                           color: "#fff",
-                          fontWeight: "bold",
                           whiteSpace: "nowrap", // Prevent text from wrapping
                           "&:hover": {
                             backgroundColor: "transparent",
-                            color: "orange",
+                            color: "#00a859",
                           },
                         }}
                       >
-                        <ListItemText primary={item.text} />
+                        {item.text}
+                        {/* <ListItemText
+                         
+                          primary=
+                        /> */}
                       </StyledListItemButton>
                     </ListItem>
                   ))}
@@ -185,19 +189,17 @@ const Header = () => {
                           component={Link}
                           to={item.to}
                           sx={{
+                            fontSize:"18px",
                             color: "#fff",
                             fontWeight: "bold",
                             whiteSpace: "nowrap", // Prevent text from wrapping
                             "&:hover": {
                               backgroundColor: "transparent",
-                              color: "orange",
+                              color: "#00a859",
                             },
                           }}
                         >
-                          <ListItemText
-                            sx={{ color: "#fff", fontWeight: "bold" }}
-                            primary={item.text}
-                          />
+                         {item.text}
                         </StyledListItemButton>
                       </ListItem>
                     ))}
@@ -210,7 +212,7 @@ const Header = () => {
                       fontWeight: 900,
                       "&:hover": {
                         backgroundColor: "transparent",
-                        color: "orange",
+                        color: "#00a859",
                       },
                     }}
                   />
@@ -229,7 +231,7 @@ const Header = () => {
               fontSize: "120px",
               "&:hover": {
                 backgroundColor: "transparent",
-                color: "orange",
+                color: "#00a859",
               },
             }}
           >
@@ -246,7 +248,7 @@ const Header = () => {
               fontSize: "45px",
               "&:hover": {
                 backgroundColor: "transparent",
-                color: "orange",
+                color: "#00a859",
               },
             }}
           >
@@ -268,12 +270,12 @@ const Header = () => {
                 backgroundColor: "transparent",
                 borderColor: "#fff",
                 "&&:hover": {
-                  color: "orange",
-                  borderColor: "orange",
+                  color: "#00a859",
+                  borderColor: "#00a859",
                 },
                 "&&:focus": {
-                  color: "orange",
-                  borderColor: "orange",
+                  color: "#00a859",
+                  borderColor: "#00a859",
                 },
               }}
             >

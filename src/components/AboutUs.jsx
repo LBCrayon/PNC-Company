@@ -47,10 +47,10 @@ const AboutUs = () => {
                 transition={{ duration: 1.5 }}
               >
                 {" "}
-                <Typography variant="h3" component="h4" color="orange">
+                <Typography variant="h3" component="h4" color="#00a859">
                   Về PNC
                 </Typography>
-                <Typography variant="h5" component="h4" color="orange">
+                <Typography variant="h5" component="h4" color="#00a859">
                   Công ty TNHH Xây Lắp Kỹ Thuật Phương Nam
                 </Typography>
               </motion.div>
@@ -103,7 +103,7 @@ const AboutUs = () => {
                       transition={{ duration: 1.5 }}
                     >
                       {" "}
-                      <Typography variant="h5" component="h4" color="orange">
+                      <Typography variant="h5" component="h4" color="#00a859">
                         Phương châm
                       </Typography>
                       <Typography
@@ -138,7 +138,7 @@ const AboutUs = () => {
                       animate={inView ? { opacity: 1, y: 0 } : {}}
                       transition={{ duration: 1.5 }}
                     >
-                      <Typography variant="h5" component="h4" color="orange">
+                      <Typography variant="h5" component="h4" color="#00a859">
                         Sứ mệnh
                       </Typography>
                       <Typography
@@ -173,7 +173,7 @@ const AboutUs = () => {
                       animate={inView ? { opacity: 1, x: 0 } : {}}
                       transition={{ duration: 1.5 }}
                     >
-                      <Typography variant="h5" component="h4" color="orange">
+                      <Typography variant="h5" component="h4" color="#00a859">
                         Mục tiêu
                       </Typography>
                       <Typography
@@ -212,12 +212,12 @@ const AboutUs = () => {
               backgroundColor: "transparent",
               borderColor: "#fff",
               "&&:hover": {
-                color: "orange",
-                borderColor: "orange",
+                color: "#00a859",
+                borderColor: "#00a859",
               },
               "&&:focus": {
-                color: "orange",
-                borderColor: "orange",
+                color: "#00a859",
+                borderColor: "#00a859",
               },
             }}
           >
@@ -228,7 +228,7 @@ const AboutUs = () => {
 
       <Grid item xs={12} sm={4} md={6}>
         <img
-          src={imgDetail}
+          src={"https://firebasestorage.googleapis.com/v0/b/finedelivery-880b6.appspot.com/o/PNC%2FPNC%20Office.png?alt=media&token=f6505cd5-497d-4aad-8efc-7ca0a7213844"}
           alt=""
           style={{
             width: "100%",
@@ -246,7 +246,7 @@ const AboutUs = () => {
         }}
       >
         <img
-          src={imgDetail2}
+          src={"https://thenaynhe.com/wp-content/uploads/2019/12/yeu-to-de-hop-tac-thanh-cong-240.jpg"}
           alt=""
           style={{
             width: "100%",
@@ -278,11 +278,11 @@ const AboutUs = () => {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 1.5 }}
               >
-                <Typography variant="h3" component="h4" color="orange">
+                <Typography variant="h3" component="h4" color="#00a859">
                   Yếu tố tạo nên thành công
                 </Typography>
                 <CustomTypography>
-                  <span style={{ color: "orange", fontSize: "30px" }}>
+                  <span style={{ color: "#00a859", fontSize: "30px" }}>
                     Con người tạo nên sức mạnh
                   </span>
                   <br />
@@ -295,7 +295,7 @@ const AboutUs = () => {
                   dài với PHƯƠNG NAM
                 </CustomTypography>
                 <CustomTypography>
-                  <span style={{ color: "orange", fontSize: "30px" }}>
+                  <span style={{ color: "#00a859", fontSize: "30px" }}>
                     Quy trình hoạt động chặt chẽ
                   </span>
                   <br />
@@ -305,7 +305,7 @@ const AboutUs = () => {
                   dịch vụ cho khách hàng
                 </CustomTypography>
                 <CustomTypography>
-                  <span style={{ color: "orange", fontSize: "30px" }}>
+                  <span style={{ color: "#00a859", fontSize: "30px" }}>
                     Tài chính – Nội lực ổn định
                   </span>
                   <br />

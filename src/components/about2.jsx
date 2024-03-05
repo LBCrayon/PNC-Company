@@ -47,10 +47,10 @@ const AboutUs2 = () => {
                 transition={{ duration: 1.5 }}
               >
                 {" "}
-                <Typography variant="h3" component="h4" color="orange">
+                <Typography variant="h3" component="h4" color="#00a859">
                   Về PNC
                 </Typography>
-                <Typography variant="h5" component="h4" color="orange">
+                <Typography variant="h5" component="h4" color="#00a859">
                   Công ty TNHH Xây Lắp Kỹ Thuật Phương Nam
                 </Typography>
               </motion.div>
@@ -105,7 +105,7 @@ const AboutUs2 = () => {
                       transition={{ duration: 1.5 }}
                     >
                       {" "}
-                      <Typography variant="h6" component="h5" color="white">
+                      <Typography variant="h6" component="h5" color="#00a859">
                         Tầm nhìn
                       </Typography>
                       <Typography
@@ -139,7 +139,7 @@ const AboutUs2 = () => {
                       animate={inView ? { opacity: 1, y: 0 } : {}}
                       transition={{ duration: 1.5 }}
                     >
-                      <Typography variant="h6" component="h5" color="white">
+                      <Typography variant="h6" component="h5" color="#00a859">
                         Sứ mệnh
                       </Typography>
                       <Typography
@@ -172,7 +172,7 @@ const AboutUs2 = () => {
                       animate={inView ? { opacity: 1, x: 0 } : {}}
                       transition={{ duration: 1.5 }}
                     >
-                      <Typography variant="h6" component="h5" color="white">
+                      <Typography variant="h6" component="h5" color="#00a859">
                         Giá trị cốt lõi
                       </Typography>
                       <Typography
@@ -209,12 +209,12 @@ const AboutUs2 = () => {
               backgroundColor: "transparent",
               borderColor: "#fff",
               "&&:hover": {
-                color: "orange",
-                borderColor: "orange",
+                color: "#00a859",
+                borderColor: "#00a859",
               },
               "&&:focus": {
-                color: "orange",
-                borderColor: "orange",
+                color: "#00a859",
+                borderColor: "#00a859",
               },
             }}
           >
@@ -243,7 +243,7 @@ const AboutUs2 = () => {
         }}
       >
         <img
-          src={imgDetail2}
+          src={"https://vietnam.atalink.com/blog/wp-content/uploads/2022/11/Tieu_Chi_Danh_Gia_Nha_Cung_Cap.png"}
           alt=""
           style={{
             width: "100%",
@@ -264,7 +264,7 @@ const AboutUs2 = () => {
         <Box
           component="article"
           sx={{
-            px: 4,
+            px: 6,
           }}
         >
           <InView triggerOnce>
@@ -275,8 +275,12 @@ const AboutUs2 = () => {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 1.5 }}
               >
-                <Typography variant="h2" component="h2" color="orange">
-                  Chúng tôi làm việc cho tương lai xanh của thế giới
+                <Typography variant="h5" component="h5" color="#00a859">
+                  {" "}
+                  Chúng tôi làm việc với phương châm <br/>
+                  <span style={{ color: "white", fontWeight: "700" }}>
+                    UY TÍN, CHẤT LƯỢNG, TIN CẬY, ĐÚNG HẠN
+                  </span>
                 </Typography>
               </motion.div>
             )}

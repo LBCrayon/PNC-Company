@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import MapsHomeWorkOutlinedIcon from "@mui/icons-material/MapsHomeWorkOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import { Box, Grid, Stack, Typography, styled } from "@mui/material";
@@ -18,7 +19,7 @@ const commonListItemButtonStyles = {
   whiteSpace: "nowrap",
   "&:hover": {
     backgroundColor: "transparent",
-    color: "orange",
+    color: "#00a859",
   },
 };
 
@@ -33,7 +34,7 @@ const StyledToolbar = styled(Toolbar)({
 });
 
 const CustomBox = styled(Box)(({ theme }) => ({
-  minHeight: "90vh",
+  minHeight: "10vh",
   display: "flex",
   justifyContent: "center",
   paddingTop: theme.spacing(4),
@@ -109,7 +110,7 @@ const Businesses = () => {
         backgroundImage: `url("https://www.ibs.com.vn/wp-content/uploads/2020/03/Group-7757-4.png")`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        height: "35vh",
+        height: "10vh",
         pb: "400px",
       }}
     >
@@ -184,7 +185,7 @@ const Businesses = () => {
                         fontWeight: "bold",
                         "&:hover": {
                           backgroundColor: "transparent",
-                          color: "orange",
+                          color: "#00a859",
                         },
                       }}
                     />

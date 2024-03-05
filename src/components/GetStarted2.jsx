@@ -3,6 +3,10 @@ import { Box, Typography, Grid, Stack } from "@mui/material";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import { motion } from "framer-motion";
 import { InView } from "react-intersection-observer";
+import EngineeringIcon from "@mui/icons-material/Engineering";
+import PrecisionManufacturingIcon from "@mui/icons-material/PrecisionManufacturing";
+import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
+import HailIcon from "@mui/icons-material/Hail";
 const useCounter = (target, interval) => {
   const [count, setCount] = useState(0);
 
@@ -90,10 +94,10 @@ const GetStarted2 = () => {
                 <CounterBox count={customerCount} />
                 <Grid container columns={16}>
                   <Grid item xs={6}>
-                    <SupportAgentIcon
+                    <HailIcon
                       sx={{
                         fontSize: 50,
-                        color: "orange",
+                        color: "#00a859",
                       }}
                     />
                   </Grid>
@@ -113,10 +117,10 @@ const GetStarted2 = () => {
                 <CounterBox count={projectCount} />
                 <Grid container columns={16}>
                   <Grid item xs={6}>
-                    <SupportAgentIcon
+                    <AssignmentTurnedInIcon
                       sx={{
                         fontSize: 50,
-                        color: "orange",
+                        color: "#00a859",
                       }}
                     />
                   </Grid>
@@ -137,10 +141,10 @@ const GetStarted2 = () => {
                 <CounterBox count={staffCount} />
                 <Grid container columns={16}>
                   <Grid item xs={6}>
-                    <SupportAgentIcon
+                    <EngineeringIcon
                       sx={{
                         fontSize: 50,
-                        color: "orange",
+                        color: "#00a859",
                       }}
                     />
                   </Grid>
@@ -156,10 +160,10 @@ const GetStarted2 = () => {
                 <CounterBox count={deviceCount} />
                 <Grid container columns={16}>
                   <Grid item xs={6}>
-                    <SupportAgentIcon
+                    <PrecisionManufacturingIcon
                       sx={{
                         fontSize: 50,
-                        color: "orange",
+                        color: "#00a859",
                       }}
                     />
                   </Grid>

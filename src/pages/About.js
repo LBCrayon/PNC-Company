@@ -13,7 +13,7 @@ const About = () => {
   return (
     <>
       <Content />
-      <Navbar />
+      {/* <Navbar /> */}
       <Gallery />
       <AboutUs2 />
       <Roadmap />

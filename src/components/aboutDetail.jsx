@@ -23,7 +23,7 @@ const AboutDetails = () => {
               component="h2"
               sx={{
                 fontWeight: 900,
-                color: "#1e2a5a",
+                color: "#00a859",
                 fontSize: "40px",
                 py: 2,
               }}
@@ -87,7 +87,7 @@ const AboutDetails = () => {
               component="h2"
               sx={{
                 fontWeight: 900,
-                color: "#1e2a5a",
+                color: "#00a859",
                 fontSize: "40px",
                 py: 2,
               }}
@@ -123,7 +123,7 @@ const AboutDetails = () => {
               component="h2"
               sx={{
                 fontWeight: 900,
-                color: "#1e2a5a",
+                color: "#00a859",
                 fontSize: "40px",
                 py: 2,
               }}

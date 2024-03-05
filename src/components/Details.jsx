@@ -14,7 +14,7 @@ const Details = () => {
     width: "50%",
   }));
   const dotStyle = {
-    color: "orange", // Change this to your desired color
+    color: "#00a859", // Change this to your desired color
     marginRight: "8px", // Adjust the margin as needed
   };
   return (
@@ -46,7 +46,7 @@ const Details = () => {
               <Title text={"Trụ sở chính"} />
               <Typography>
                 <span style={dotStyle}>•</span>
-                Địa chỉ: P. Phú Thuận, Quận 2, Thành phố Hồ Chí Minh
+                Địa chỉ: C33 – C34, Tầng 3, Homyland Riverside, 403A Nguyễn Duy Trinh,P.Bình Trưng Tây, Q.2, TP HCM   
               </Typography>
               <Typography>
                 <span style={dotStyle}>•</span>Điện thoại: 0909090909
@@ -60,7 +60,7 @@ const Details = () => {
             </Grid>
             <Grid item xs={8}>
               <img
-                src="https://cdn.luatvietnam.vn/uploaded/Images/Original/2023/04/27/tru-so-chinh-la-gi_2704092955.jpg" // Replace with the actual path to your image
+                src="https://firebasestorage.googleapis.com/v0/b/finedelivery-880b6.appspot.com/o/PNC%2FPNC%20Office.png?alt=media&token=f6505cd5-497d-4aad-8efc-7ca0a7213844" // Replace with the actual path to your image
                 alt="Company Image"
                 style={{ maxWidth: "305%", height: "auto" }}
               />
@@ -86,8 +86,8 @@ const Details = () => {
             HỒ CHÍ MINH
           </Typography>
           <Typography>
-            <span style={dotStyle}>•</span> Địa chỉ: P. Phú Thuận, Quận 2, Thành
-            phố Hồ Chí Minh
+            <span style={dotStyle}>•</span> Địa chỉ: C33 – C34, Tầng 3, Homyland
+            Riverside, 403A Nguyễn Duy Trinh,P.Bình Trưng Tây, Q.2, TP HCM
           </Typography>
           <Typography>
             <span style={dotStyle}>•</span>Điện thoại: 0909090909

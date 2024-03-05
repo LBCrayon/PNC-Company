@@ -124,6 +124,7 @@ const Device = () => {
         }}
       >
         <Carousel
+          showThumbs={false}
           centerSlidePercentage={40}
           thumbWidth={180}
           dynamicHeight={false}

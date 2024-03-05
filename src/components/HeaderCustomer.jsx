@@ -21,7 +21,7 @@ const commonListItemButtonStyles = {
   whiteSpace: "nowrap",
   "&:hover": {
     backgroundColor: "transparent",
-    color: "orange",
+    color: "#00a859",
   },
 };
 
@@ -196,7 +196,7 @@ const HeaderCustomer = () => {
                         fontWeight: "bold",
                         "&:hover": {
                           backgroundColor: "transparent",
-                          color: "orange",
+                          color: "#00a859",
                         },
                       }}
                     />

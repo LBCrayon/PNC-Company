@@ -50,29 +50,23 @@ const CounterBox = ({ count, label, text }) => (
 );
 
 const Gallery = () => {
-  const year = 14;
-  const staff = 800;
+  const year = 15;
+  const staff = 200;
   const project = 300;
-  const asset = 1000;
-  const partner = 30;
-  const company = 6;
+  const partner = 24;
 
   const yearCount = useCounter(year, 3);
   const staffCount = useCounter(staff, 3);
   const projectCount = useCounter(project, 3);
-  const assetCount = useCounter(asset, 3);
-  const partnerCount = useCounter(partner, 3);
-  const companyCount = useCounter(company, 3);
+  const partnerCount = useCounter(partner, 90);
   const counterItems = [
-    { label: "YRS", count: yearCount, text: "TỪ 2006" },
+    { label: "YRS", count: yearCount, text: "TỪ 2009" },
     { label: "", count: projectCount, text: "DỰ ÁN" },
-    { label: "BIL", count: assetCount, text: "TỔNG TÀI SẢN TRONG NĂM 2019" },
     { label: "", count: staffCount, text: "NHÂN SỰ" },
-    { label: "", count: partnerCount, text: "ĐỐI TÁC TOÀN CẦU" },
-    { label: "", count: companyCount, text: "CÔNG TY THÀNH VIÊN" },
+    { label: "", count: partnerCount, text: "ĐỐI TÁC" },
   ];
   const outlinedTextStyle = {
-    textShadow: "1px 1px 5px orange", // Hiệu ứng viền màu cam
+    textShadow: "1px 1px 5px #00a859", // Hiệu ứng viền màu cam
   };
 
   return (
@@ -82,7 +76,7 @@ const Gallery = () => {
         backgroundImage: `url("https://www.ibs.com.vn/wp-content/uploads/2020/03/Group-7757-2.png")`,
         backgroundSize: "cover",
         backgroundPosition: "center", // Để giữ nền ảnh ở giữa trang
-        height: "60vh", // Set chiều cao bằng 100% của viewport
+        height: "70vh", // Set chiều cao bằng 100% của viewport
         py: 6,
         px: 28,
         display: { xs: "flex" },
@@ -105,7 +99,7 @@ const Gallery = () => {
                   sx={{
                     pb: 2,
                     fontWeight: 400,
-                    color: "#1e2a5a",
+                    color: "#00a859",
                     fontSize: "45px",
                     textAlign: "justify",
                   }}
@@ -116,35 +110,26 @@ const Gallery = () => {
                   sx={{
                     fontWeight: 400,
                     color: "#1e2a5a",
-                    fontSize: "16px",
+                    fontSize: "20px",
                     textAlign: "justify",
                   }}
                 >
                   {" "}
-                  Công ty Cổ phần Xây dựng Công nghiệp Dịch vụ Việt Nam (IBS)
-                  tiền thân là Công ty Cổ phần Giải pháp Tòa nhà Thông minh,
-                  được thành lập năm 2006. Chúng tôi chuyên thiết kế, cung cấp,
-                  xây dựng, lắp đặt cho các dự án dân dụng và công nghiệp; sản
-                  xuất và lắp đặt các thiết bị cơ khí, bể chứa, đường ống cao áp
-                  cho các nhà máy công nghiệp; cung cấp các giải pháp tự động
-                  hóa, giải pháp năng lượng mới, năng lượng tái tạo, giải pháp
-                  tiết kiệm năng lượng; dịch vụ quản lý và vận hành; xây dựng
-                  mới và sửa chữa tàu lên tới 10.000 dwt và dịch vụ cảng; cung
-                  cấp thiết bị điều khiển, thiết bị chiếu sáng, hệ thống bảo vệ,
-                  camera giám sát, thiết bị phòng cháy chữa cháy, vv (IBS là đối
-                  tác phân phối cho các sản phẩm của những thương hiệu hàng đầu
-                  thế giới như Honeywell, ABB, Tyco, Lefa).
+                  CÔNG TY HÀNG ĐẦU VỀ HỢP TÁC ĐẦU TƯ HẠ TẦNG VIỄN THÔNG, TƯ VẤN,
+                  CUNG CẤP GIẢI PHÁP AN NINH TÍCH HỢP HỆ THỐNG VÀ HỆ THỐNG ĐIỆN
+                  NHẸ. <br /> <br /> Công ty Phương Nam là công ty hàng đầu
+                  trong lĩnh vực hợp tác đầu tư hạ tầng viễn thông, một trong
+                  những công ty tư vấn, cung cấp giải pháp an ninh tích hợp hệ
+                  thống cho các công trình thương mại, công nghiệp, dân dụng và
+                  cơ sở hạ tầng. <br /> <br /> Thành lập vào năm 2009, cho đến
+                  nay Công ty đã thực hiện rất nhiều công trình trên khắp khu
+                  vực Miền Nam, trong đó có nhiều công trình nổi tiếng và mang
+                  tầm vóc lớn nhất Việt Nam. <br /> <br />
+                  Công ty Phương Nam luôn đảm bảo tính hiệu quả trong các dự án
+                  hợp tác đầu tư hạ tầng viễn thông, luôn đảm bảo tiến độ công
+                  trình, chất lượng và giá cả hợp lý trong các dự án cung cấp
+                  giải pháp an ninh tích hợp hệ thống.
                   <br />
-                  IBS sở hữu hệ thống 2 văn phòng nội địa (Hà Nội, Hồ Chí Minh)
-                  và hoạt động tại các thị trường quốc tế bao gồm Singapore và
-                  Campuchia.
-                  <br />
-                  IBS là tổng thầu EPC Việt Nam đầu tiên có khả năng triển khai
-                  toàn bộ phạm vi EPC từ thiết kế kỹ thuật, mua sắm, lắp đặt, và
-                  vận hành nhà máy điện gió quy mô lớn nhất Đông Nam Á tại thời
-                  điểm trúng thầu. Điều đó đánh dấu sự kỳ vọng cho sự phát triển
-                  và cam kết của IBS với hàng loạt các dự án trong lĩnh vực năng
-                  lượng tái tạo dự kiến sẽ được thực hiện trong tương lai gần.
                 </Typography>
               </motion.div>
             )}

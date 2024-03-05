@@ -12,74 +12,38 @@ const BeforeFooter = () => {
     width: "50%",
   }));
   return (
-    <Grid container spacing={2} columns={16} pl={32} alignItems={"center"}>
-      <Grid item xs={8}>
-        <Stack>
-          {" "}
-          <TextField
-            required
-            id="standard-multiline-static"
-            label="Họ và tên"
-            multiline
-            rows={4}
-            variant="standard"
-          />
-          <TextField
-            required
-            id="standard-multiline-static"
-            label="Email"
-            multiline
-            rows={4}
-            variant="standard"
-          />
-          <TextField
-            id="standard-multiline-static"
-            label="Nội dung"
-            multiline
-            rows={4}
-            variant="standard"
-            sx={{ paddingTop: "100px" }}
-          />
-        </Stack>
-      </Grid>
-      <Grid item xs={8}>
-        <Stack
-          component="section"
-          direction="column"
-          justifyContent="center"
-          alignItems="center" // Center the content horizontally
-          spacing={4}
-          container
-          sx={{
-            backgroundImage: `url("https://www.ibs.com.vn/wp-content/uploads/2020/03/Group-7757-4.png")`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            height: "70vh",
-            width: "100%",
-            display: "flex", // Enable flexbox for proper alignment
-            flexDirection: "column", // Stack children vertically
-            color: "white",
-          }}
-        >
-          <Typography
-            variant="h2"
-            fontWeight={"900"}
-            fontSize={"30px"}
-            pt={30}
-            pl={4}
-          >
-            Hãy liên lạc với chúng tôi ngay trong hôm nay
-          </Typography>
-          <StackColumn textAlign="center">
-            {/* Adjusting textAlign to center the text */}
-            <Typography>P. Phú Thuận, Quận 2, Thành phố Hồ Chí Minh</Typography>
-            <Typography>ĐT: (+842) 439 723 435</Typography>
-            <Typography>Fax: (+842) 439 723 433</Typography>
-            <Typography>Email: info@ibs.com.vn</Typography>
-          </StackColumn>
-        </Stack>
-      </Grid>
-    </Grid>
+    <Stack
+      component="section"
+      direction="column"
+      justifyContent="center"
+      alignItems="center" // Center the content horizontally
+      spacing={4}
+      container
+      sx={{
+        backgroundImage: `url("https://www.ibs.com.vn/wp-content/uploads/2020/03/Group-7757-4.png")`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        height: "50vh",
+        width: "100%",
+        display: "flex", // Enable flexbox for proper alignment
+        flexDirection: "column", // Stack children vertically
+        color: "white",
+      }}
+    >
+      <StackColumn textAlign="center">
+        <Typography variant="h2" fontWeight={"900"} fontSize={"30px"} pt={20}>
+        Rất hy vọng sẽ có cơ hội hợp tác với quý đối tác!
+        </Typography>
+        {/* Adjusting textAlign to center the text */}
+        <Typography>
+          C33 – C34, Tầng 3, Homyland Riverside, 403A Nguyễn Duy Trinh,P.Bình
+          Trưng Tây, Q.2, TP HCM
+        </Typography>
+        <Typography>ĐT: (028) 3620 3737</Typography>
+        <Typography>Fax: (028) 3620 3737</Typography>
+        <Typography>Email: pnc@kythuatphuongnam.com</Typography>
+      </StackColumn>
+    </Stack>
   );
 };
 
