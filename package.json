@@ -1,7 +1,6 @@
 {
   "name": "landing-page-reactjs-materialui",
   "version": "0.1.0",
-  "homepage": "https://lbcrayon.github.io/PNC-Company",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -28,10 +27,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "build": "cross-env CI=false react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
