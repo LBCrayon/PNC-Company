@@ -26,13 +26,13 @@ const StyledListItemButton = styled(ListItemButton)({
 });
 
 const itemList = [
-  {
-    text: "Quan hệ cổ đông",
-    to: "/about",
-  },
+  // {
+  //   text: "Đối tác",
+  //   to: "/about",
+  // },
   {
     text: "Tuyển dụng",
-    to: "/contact",
+    to: "/recruit",
   },
   {
     text: "Liên hệ",
@@ -139,8 +139,8 @@ const Content = () => {
                           component={Link}
                           to={item.to}
                           sx={{
-                            color: "#fff",
                             fontSize: "14px",
+                            color: "#fff",
                             whiteSpace: "nowrap", // Prevent text from wrapping
                             "&:hover": {
                               backgroundColor: "transparent",
@@ -161,8 +161,8 @@ const Content = () => {
                             component={Link}
                             to={item.to}
                             sx={{
+                              fontSize: "18px",
                               color: "#fff",
-                              fontSize: "16px",
                               fontWeight: "bold",
                               whiteSpace: "nowrap", // Prevent text from wrapping
                               "&:hover": {

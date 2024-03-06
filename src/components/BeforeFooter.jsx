@@ -36,7 +36,7 @@ const BeforeFooter = () => {
         </Typography>
         {/* Adjusting textAlign to center the text */}
         <Typography>
-          C33 – C34, Tầng 3, Homyland Riverside, 403A Nguyễn Duy Trinh,P.Bình
+          Trụ sở: C33 – C34, Tầng 3, Homyland Riverside, 403A Nguyễn Duy Trinh,P.Bình
           Trưng Tây, Q.2, TP HCM
         </Typography>
         <Typography>ĐT: (028) 3620 3737</Typography>

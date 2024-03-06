@@ -61,13 +61,13 @@ const StyledListItemButton = styled(ListItemButton)({
 });
 
 const itemList = [
-  {
-    text: "Quan hệ cổ đông",
-    to: "/about",
-  },
+  // {
+  //   text: "Đối tác",
+  //   to: "/about",
+  // },
   {
     text: "Tuyển dụng",
-    to: "/contact",
+    to: "/recruit",
   },
   {
     text: "Liên hệ",
@@ -152,10 +152,16 @@ const Businesses = () => {
                           component={Link}
                           to={item.to}
                           sx={{
-                            ...commonListItemButtonStyles,
+                            fontSize: "14px",
+                            color: "#fff",
+                            whiteSpace: "nowrap", // Prevent text from wrapping
+                            "&:hover": {
+                              backgroundColor: "transparent",
+                              color: "#00a859",
+                            },
                           }}
                         >
-                          <ListItemText primary={item.text} />
+                          {item.text}
                         </StyledListItemButton>
                       </ListItem>
                     ))}
@@ -168,10 +174,17 @@ const Businesses = () => {
                             component={Link}
                             to={item.to}
                             sx={{
-                              ...commonListItemButtonStyles,
+                              fontSize: "18px",
+                              color: "#fff",
+                              fontWeight: "bold",
+                              whiteSpace: "nowrap", // Prevent text from wrapping
+                              "&:hover": {
+                                backgroundColor: "transparent",
+                                color: "#00a859",
+                              },
                             }}
                           >
-                            <ListItemText primary={item.text} />
+                            {item.text}
                           </StyledListItemButton>
                         </ListItem>
                       ))}

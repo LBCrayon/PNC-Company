@@ -31,13 +31,13 @@ const StyledListItemButton = styled(ListItemButton)({
 });
 
 const itemList = [
-  {
-    text: "Quan hệ cổ đông",
-    to: "/about",
-  },
+  // {
+  //   text: "Đối tác",
+  //   to: "/about",
+  // },
   {
     text: "Tuyển dụng",
-    to: "/contact",
+    to: "/recruit",
   },
   {
     text: "Liên hệ",

@@ -10,9 +10,16 @@ import SecurityIcon from "@mui/icons-material/Security";
 import SettingsInputCompositeIcon from "@mui/icons-material/SettingsInputComposite";
 import SettingsSuggestIcon from "@mui/icons-material/SettingsSuggest";
 import {
-  AppBar, Box, Grid, ListItem,
+  AppBar,
+  Box,
+  Grid,
+  ListItem,
   ListItemButton,
-  ListItemText, Stack, Toolbar, Typography, styled
+  ListItemText,
+  Stack,
+  Toolbar,
+  Typography,
+  styled,
 } from "@mui/material";
 import { motion } from "framer-motion";
 import React from "react";
@@ -65,13 +72,13 @@ const StyledListItemButton = styled(ListItemButton)({
 });
 
 const itemList = [
-  {
-    text: "Quan hệ cổ đông",
-    to: "/about",
-  },
+  // {
+  //   text: "Đối tác",
+  //   to: "/about",
+  // },
   {
     text: "Tuyển dụng",
-    to: "/contact",
+    to: "/recruit",
   },
   {
     text: "Liên hệ",
@@ -107,25 +114,29 @@ const linkStyle = {
 };
 
 const ProjectBox = ({ icon, title }) => (
-  <Box
-    component="article"
-    sx={{
-      px: 4,
-      py: 2,
-      textAlign: "center",
-    }}
-  >
-    {icon}
-    <Typography
-      fontWeight={900}
-      fontSize={"13px"}
-      variant="h6"
-      component="h5"
-      color="white"
+  <>
+    <Box
+      component="article"
+      sx={{
+        px: 4,
+        py: 2,
+        textAlign: "center",
+      }}
     >
-      {title}
-    </Typography>
-  </Box>
+      {React.cloneElement(icon, {
+        style: { marginBottom: "8px" }, // Thêm khoảng cách giữa icon và tiêu đề
+      })}
+      <Typography
+        fontWeight={900}
+        fontSize={"13px"}
+        variant="h6"
+        component="h5"
+        color="white"
+      >
+        {title}
+      </Typography>
+    </Box>
+  </>
 );
 
 const Projects = () => {
@@ -178,10 +189,16 @@ const Projects = () => {
                           component={Link}
                           to={item.to}
                           sx={{
-                            ...commonListItemButtonStyles,
+                            fontSize: "14px",
+                            color: "#fff",
+                            whiteSpace: "nowrap", // Prevent text from wrapping
+                            "&:hover": {
+                              backgroundColor: "transparent",
+                              color: "#00a859",
+                            },
                           }}
                         >
-                          <ListItemText primary={item.text} />
+                          {item.text}
                         </StyledListItemButton>
                       </ListItem>
                     ))}
@@ -194,10 +211,17 @@ const Projects = () => {
                             component={Link}
                             to={item.to}
                             sx={{
-                              ...commonListItemButtonStyles,
+                              fontSize: "18px",
+                              color: "#fff",
+                              fontWeight: "bold",
+                              whiteSpace: "nowrap", // Prevent text from wrapping
+                              "&:hover": {
+                                backgroundColor: "transparent",
+                                color: "#00a859",
+                              },
                             }}
                           >
-                            <ListItemText primary={item.text} />
+                            {item.text}
                           </StyledListItemButton>
                         </ListItem>
                       ))}

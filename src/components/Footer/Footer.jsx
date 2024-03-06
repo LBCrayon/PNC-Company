@@ -28,13 +28,13 @@ const Footer = () => {
             CÔNG TY TNHH XÂY LẮP KỸ THUẬT PHƯƠNG NAM{" "}
           </Typography>{" "}
         </Stack>
-        <Grid container spacing={12} columns={16}>
-          <Grid item xs={8} spacing={2}>
+        <Grid container spacing={3}>
+          <Grid item xs={4}>
             <Typography variant="h4" fontSize={"20px"} my={2}>
               Văn phòng Hồ Chí Minh
-            </Typography>{" "}
+            </Typography>
             <Divider
-              sx={{ height: "0.5px", width: "550px", backgroundColor: "#fff" }}
+              sx={{ height: "0.5px", width: "400px", backgroundColor: "#fff" }}
             />
             <Typography fontSize={"14px"} mt={1}>
               Địa chỉ: C33 – C34, Tầng 3, Homyland Riverside, 403A Nguyễn Duy
@@ -53,12 +53,12 @@ const Footer = () => {
               Email: pnc@kythuatphuongnam.com
             </Typography>{" "}
           </Grid>
-          <Grid item xs={8} spacing={2}>
+          <Grid item xs={4}>
             <Typography variant="h4" fontSize={"20px"} my={2}>
               Văn phòng Hà Nội
-            </Typography>{" "}
+            </Typography>
             <Divider
-              sx={{ height: "0.5px", width: "550px", backgroundColor: "#fff" }}
+              sx={{ height: "0.5px", width: "400px", backgroundColor: "#fff" }}
             />
             <Typography fontSize={"14px"} mt={1}>
               Địa chỉ: C33 – C34, Tầng 3, Homyland Riverside, 403A Nguyễn Duy
@@ -76,6 +76,13 @@ const Footer = () => {
             <Typography fontSize={"14px"} mt={1}>
               Email: pnc@kythuatphuongnam.com
             </Typography>{" "}
+          </Grid>
+          <Grid item xs={4}>
+            <img
+              height={"300px"}
+              width={"400px"}
+              src="https://www.ibs.com.vn/wp-content/uploads/2020/03/Group-7757-1.png"
+            />
           </Grid>
         </Grid>
       </Stack>

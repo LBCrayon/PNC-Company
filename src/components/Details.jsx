@@ -30,7 +30,12 @@ const Details = () => {
         }}
         spacing={4}
       >
-        <Typography variant="h2" fontWeight={"900"} fontSize={"50px"}>
+        <Typography
+          variant="h2"
+          fontWeight={"900"}
+          fontSize={"50px"}
+          color={"#00a859"}
+        >
           THÔNG TIN CÔNG TY VÀ LIÊN HỆ
         </Typography>
         <Divider sx={{ my: 2, width: "100%", backgroundColor: "black" }} />{" "}
@@ -43,19 +48,25 @@ const Details = () => {
             columns={16}
           >
             <Grid item xs={8}>
-              <Title text={"Trụ sở chính"} />
+              <Typography color={"#00a859"} variant="h5" fontWeight={"900"}>
+                Trụ sở chính
+              </Typography>
               <Typography>
                 <span style={dotStyle}>•</span>
-                Địa chỉ: C33 – C34, Tầng 3, Homyland Riverside, 403A Nguyễn Duy Trinh,P.Bình Trưng Tây, Q.2, TP HCM   
+                Địa chỉ: C33 – C34, Tầng 3, Homyland Riverside, 403A Nguyễn Duy
+                Trinh,P.Bình Trưng Tây, Q.2, TP HCM
               </Typography>
               <Typography>
-                <span style={dotStyle}>•</span>Điện thoại: 0909090909
+                <span style={dotStyle}>•</span>Điện thoại: (028) 3620 3737
               </Typography>
               <Typography>
-                <span style={dotStyle}>•</span>Fax: 0909090909
+                <span style={dotStyle}>•</span>Fax: (028) 3620 3737
               </Typography>
               <Typography>
-                <span style={dotStyle}>•</span>Email: lebao.dev@gmail.com
+                <span style={dotStyle}>•</span>Hotline: 0941 674 678
+              </Typography>
+              <Typography>
+                <span style={dotStyle}>•</span>Email:pnc@kythuatphuongnam.com
               </Typography>
             </Grid>
             <Grid item xs={8}>
@@ -86,17 +97,21 @@ const Details = () => {
             HỒ CHÍ MINH
           </Typography>
           <Typography>
-            <span style={dotStyle}>•</span> Địa chỉ: C33 – C34, Tầng 3, Homyland
-            Riverside, 403A Nguyễn Duy Trinh,P.Bình Trưng Tây, Q.2, TP HCM
+            <span style={dotStyle}>•</span>
+            Địa chỉ: C33 – C34, Tầng 3, Homyland Riverside, 403A Nguyễn Duy
+            Trinh,P.Bình Trưng Tây, Q.2, TP HCM
           </Typography>
           <Typography>
-            <span style={dotStyle}>•</span>Điện thoại: 0909090909
+            <span style={dotStyle}>•</span>Điện thoại: (028) 3620 3737
           </Typography>
           <Typography>
-            <span style={dotStyle}>•</span>Fax: 0909090909
+            <span style={dotStyle}>•</span>Fax: (028) 3620 3737
           </Typography>
           <Typography>
-            <span style={dotStyle}>•</span>Email: lebao.dev@gmail.com
+            <span style={dotStyle}>•</span>Hotline: 0941 674 678
+          </Typography>
+          <Typography>
+            <span style={dotStyle}>•</span>Email:pnc@kythuatphuongnam.com
           </Typography>
         </StackColumn>
         <StackColumn>
@@ -104,17 +119,21 @@ const Details = () => {
             HÀ NỘI
           </Typography>
           <Typography>
-            <span style={dotStyle}>•</span> Địa chỉ: P. Phú Thuận, Quận 2, Thành
-            phố Hồ Chí Minh
+            <span style={dotStyle}>•</span>
+            Địa chỉ: C33 – C34, Tầng 3, Homyland Riverside, 403A Nguyễn Duy
+            Trinh,P.Bình Trưng Tây, Q.2, TP HCM
           </Typography>
           <Typography>
-            <span style={dotStyle}>•</span>Điện thoại: 0909090909
+            <span style={dotStyle}>•</span>Điện thoại: (028) 3620 3737
           </Typography>
           <Typography>
-            <span style={dotStyle}>•</span>Fax: 0909090909
+            <span style={dotStyle}>•</span>Fax: (028) 3620 3737
           </Typography>
           <Typography>
-            <span style={dotStyle}>•</span>Email: lebao.dev@gmail.com
+            <span style={dotStyle}>•</span>Hotline: 0941 674 678
+          </Typography>
+          <Typography>
+            <span style={dotStyle}>•</span>Email:pnc@kythuatphuongnam.com
           </Typography>
         </StackColumn>
         <StackColumn>
@@ -122,17 +141,21 @@ const Details = () => {
             VĂN PHÒNG ĐẠI DIỆN
           </Typography>
           <Typography>
-            <span style={dotStyle}>•</span> Địa chỉ: P. Phú Thuận, Quận 2, Thành
-            phố Hồ Chí Minh
+            <span style={dotStyle}>•</span>
+            Địa chỉ: C33 – C34, Tầng 3, Homyland Riverside, 403A Nguyễn Duy
+            Trinh,P.Bình Trưng Tây, Q.2, TP HCM
           </Typography>
           <Typography>
-            <span style={dotStyle}>•</span>Điện thoại: 0909090909
+            <span style={dotStyle}>•</span>Điện thoại: (028) 3620 3737
           </Typography>
           <Typography>
-            <span style={dotStyle}>•</span>Fax: 0909090909
+            <span style={dotStyle}>•</span>Fax: (028) 3620 3737
           </Typography>
           <Typography>
-            <span style={dotStyle}>•</span>Email: lebao.dev@gmail.com
+            <span style={dotStyle}>•</span>Hotline: 0941 674 678
+          </Typography>
+          <Typography>
+            <span style={dotStyle}>•</span>Email:pnc@kythuatphuongnam.com
           </Typography>
         </StackColumn>
       </Stack>
