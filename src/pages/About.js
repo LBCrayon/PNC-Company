@@ -1,13 +1,12 @@
 import React from "react";
+import BeforeFooter from "../components/BeforeFooter";
 import Content from "../components/Content";
 import Gallery from "../components/Gallery";
+import Slider from "../components/Slider";
 import AboutUs2 from "../components/about2";
-import Roadmap from "../components/roadmap";
 import Chungchi from "../components/chungchi";
 import Device from "../components/device";
-import Slider from "../components/Slider";
-import Navbar from "../components/Navbar";
-import BeforeFooter from "../components/BeforeFooter";
+import Roadmap from "../components/roadmap";
 
 const About = () => {
   return (
