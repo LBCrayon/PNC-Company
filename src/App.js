@@ -1,6 +1,6 @@
 import React from "react";
 //rotas
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
 //pages
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -16,7 +16,7 @@ import Recruit from "./pages/Recruit";
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         {/* <Navbar /> */}
         <Routes>
           <Route path="/" element={<Home />} />
@@ -28,7 +28,7 @@ function App() {
           <Route path="/news" element={<News />} />
           <Route path="/recruit" element={<Recruit />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
       <Footer />
     </>
   );
