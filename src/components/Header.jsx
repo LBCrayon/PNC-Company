@@ -1,16 +1,17 @@
 import { Box, styled, Typography } from "@mui/material";
-import React from "react";
+import { motion } from "framer-motion";
+import React, { useState } from "react";
 import ReactPlayer from "react-player";
 import { Link } from "react-router-dom";
-import SearchIcon from "@mui/icons-material/Search";
-import { motion } from "framer-motion";
+
 import {
   AppBar,
   Button,
   Grid,
   ListItem,
   ListItemButton,
-  ListItemText,
+  Menu,
+  MenuItem,
   Stack,
   Toolbar,
 } from "@mui/material";
@@ -23,18 +24,7 @@ const ListMenu = styled("ul")({
   gap: "8px",
 });
 
-const StyledListItemButton = styled(ListItemButton)({
-  "&:hover": {
-    backgroundColor: "transparent",
-    color: "#1e2a5a",
-  },
-});
-
 const itemList = [
-  // {
-  //   text: "Đối tác",
-  //   to: "/about",
-  // },
   {
     text: "Tuyển dụng",
     to: "/recruit",
@@ -46,50 +36,75 @@ const itemList = [
 ];
 const itemList2 = [
   {
+    id: 1,
     text: "Trang chủ",
     to: "/",
   },
   {
+    id: 2,
     text: "Về chúng tôi",
     to: "/about",
   },
   {
+    id: 3,
     text: "Lĩnh vực kinh doanh chính",
     to: "/business",
+    subMenu: [
+      { text: "XEM TẤT CẢ", to: "/business" },
+      { text: "HỢP TÁC ĐẦU TƯ HẠ TẦNG VIỄN THÔNG", to: "/business1" },
+      { text: "ĐIỆN NHẸ", to: "/business2" },
+      { text: "KỸ THUẬT MẠNG VIỄN THÔNG", to: "/business3" },
+      { text: "THƯƠNG MẠI QUỐC TẾ", to: "/business4" },
+    ],
   },
   {
+    id: 4,
     text: "Dự án",
     to: "/project",
+    subMenu: [
+      { text: "XEM TẤT CẢ", to: "/project" },
+      { text: "SÂN BAY", to: "/project1" },
+      { text: "TRUNG TÂM HÀNH CHÍNH", to: "/project2" },
+      { text: "KHU PHỨC HỢP", to: "/project3" },
+      { text: "BỆNH VIỆN", to: "/project4" },
+      { text: "TRƯỜNG ĐẠI HỌC", to: "/project5" },
+      { text: "TRUNG TÂM THƯƠNG MẠI", to: "/project6" },
+      { text: "CAO ỐC VĂN PHÒNG", to: "/project7" },
+      { text: "KHÁCH SẠN/ CONDOTEL", to: "/project8" },
+      { text: "CHUNG CƯ/ CĂN HỘ CAO CẤP", to: "/project9" },
+      { text: "KÝ TÚC XÁ", to: "/project10" },
+     
+    ],
   },
   {
+    id: 5,
     text: "Tin tức",
     to: "/news",
   },
 ];
 
-const Header = () => {
-  const CustomAppBar = styled(AppBar)({
-    backgroundColor: "rgba(0, 0, 0, 0)", // Adjust the alpha value for transparency
-    boxShadow: "none",
-  });
+const CustomAppBar = styled(AppBar)({
+  backgroundColor: "rgba(0, 0, 0, 0)", // Adjust the alpha value for transparency
+  boxShadow: "none",
+});
 
-  const StyledToolbar = styled(Toolbar)({
-    display: "flex",
-    justifyContent: "center",
-  });
-  const CustomBox = styled(Box)(({ theme }) => ({
-    minHeight: "96.8vh",
-    display: "flex",
-    justifyContent: "center",
-    paddingTop: theme.spacing(4),
-    [theme.breakpoints.down("md")]: {
-      flexDirection: "column",
-      alignItems: "center",
-      textAlign: "center",
-    },
-  }));
-  const AnimatedTypography = styled(Typography)(
-    ({ theme }) => `
+const StyledToolbar = styled(Toolbar)({
+  display: "flex",
+  justifyContent: "center",
+});
+const CustomBox = styled(Box)(({ theme }) => ({
+  minHeight: "96.8vh",
+  display: "flex",
+  justifyContent: "center",
+  paddingTop: theme.spacing(4),
+  [theme.breakpoints.down("md")]: {
+    flexDirection: "column",
+    alignItems: "center",
+    textAlign: "center",
+  },
+}));
+const AnimatedTypography = styled(Typography)(
+  ({ theme }) => `
       @keyframes slideUp {
         from {
           transform: translateY(20px);
@@ -103,28 +118,41 @@ const Header = () => {
   
       animation: slideUp 2s ${theme.transitions.easing.easeInOut};
     `
-  );
-  const youtubeConfig = {
-    playerVars: {
-      autoplay: 1,
-      loop: 1,
-      controls: 0, // Ẩn controls
-      modestbranding: 1,
-      fs: 1,
-      cc_load_policy: 1,
-      iv_load_policy: 3,
-      start: 0,
-      autohide: 0,
-      enablejsapi: 1,
-      origin: window.location.origin,
-      playsinline: 1,
-      rel: 0,
-      showinfo: 0,
-      quality: "hd2160", // Chọn chất lượng cao nhất
-      cc_lang_pref: "invalid", // Ngôn ngữ không được hỗ trợ
-    },
+);
+const youtubeConfig = {
+  playerVars: {
+    autoplay: 1,
+    loop: 1,
+    controls: 0, // Ẩn controls
+    modestbranding: 1,
+    fs: 1,
+    cc_load_policy: 1,
+    iv_load_policy: 3,
+    start: 0,
+    autohide: 0,
+    enablejsapi: 1,
+    origin: window.location.origin,
+    playsinline: 1,
+    rel: 0,
+    showinfo: 0,
+    quality: "hd2160", // Chọn chất lượng cao nhất
+    cc_lang_pref: "invalid", // Ngôn ngữ không được hỗ trợ
+  },
+};
+
+const Header = () => {
+  const [anchorEl1, setAnchorEl1] = useState(null);
+  const [anchorEl2, setAnchorEl2] = useState(null);
+
+  const handleClick = (event, anchorElSetter) => {
+    if (anchorElSetter !== event.currentTarget) {
+      anchorElSetter(event.currentTarget);
+    }
   };
 
+  const handleClose = (anchorElSetter) => {
+    anchorElSetter(null);
+  };
   return (
     <CustomBox component="header">
       <CustomAppBar component="nav" position="sticky" elevation={0}>
@@ -158,7 +186,7 @@ const Header = () => {
                 <ListMenu>
                   {itemList.map((item) => (
                     <ListItem key={item.text}>
-                      <StyledListItemButton
+                      <Button
                         component={Link}
                         to={item.to}
                         sx={{
@@ -172,50 +200,104 @@ const Header = () => {
                         }}
                       >
                         {item.text}
-                        {/* <ListItemText
-                         
-                          primary=
-                        /> */}
-                      </StyledListItemButton>
+                      </Button>
                     </ListItem>
                   ))}
                 </ListMenu>
-
                 <Stack direction="row" spacing={2}>
-                  <ListMenu>
-                    {itemList2.map((item) => (
-                      <ListItem key={item.text}>
-                        <StyledListItemButton
-                          component={Link}
-                          to={item.to}
-                          sx={{
-                            fontSize:"18px",
-                            color: "#fff",
-                            fontWeight: "bold",
-                            whiteSpace: "nowrap", // Prevent text from wrapping
-                            "&:hover": {
-                              backgroundColor: "transparent",
-                              color: "#00a859",
-                            },
-                          }}
-                        >
-                         {item.text}
-                        </StyledListItemButton>
+                {itemList2.map((item) => (
+                      <ListItem key={item.id}>
+                        {item.subMenu ? (
+                          <React.Fragment>
+                            <Button
+                              aria-owns={
+                                item.id === 3 ? "sub-menu1" : "sub-menu2"
+                              }
+                              aria-haspopup="true"
+                              onClick={(e) =>
+                                handleClick(
+                                  e,
+                                  item.id === 3 ? setAnchorEl1 : setAnchorEl2
+                                )
+                              }
+                              onMouseOver={(e) =>
+                                handleClick(
+                                  e,
+                                  item.id === 3 ? setAnchorEl1 : setAnchorEl2
+                                )
+                              }
+                              sx={{
+                                fontSize: "18px",
+                                color: "#fff",
+                                fontWeight: "bold",
+                                whiteSpace: "nowrap",
+                              }}
+                            >
+                              {item.text}
+                            </Button>
+                            <Menu
+                              id={item.id === 3 ? "sub-menu1" : "sub-menu2"}
+                              anchorEl={item.id === 3 ? anchorEl1 : anchorEl2}
+                              open={Boolean(
+                                item.id === 3 ? anchorEl1 : anchorEl2
+                              )}
+                              onClose={() =>
+                                handleClose(
+                                  item.id === 3 ? setAnchorEl1 : setAnchorEl2
+                                )
+                              }
+                              MenuListProps={{
+                                onMouseLeave: () =>
+                                  handleClose(
+                                    item.id === 3 ? setAnchorEl1 : setAnchorEl2
+                                  ),
+                              }}
+                            >
+                              {item.subMenu.map((subMenuItem) => (
+                                <MenuItem
+                                  key={subMenuItem.text}
+                                  component={Link}
+                                  to={subMenuItem.to}
+                                  onClick={() =>
+                                    handleClose(
+                                      item.id === 3
+                                        ? setAnchorEl1
+                                        : setAnchorEl2
+                                    )
+                                  }
+                                  sx={{
+                                    borderColor: "#00a859",
+                                    "&:hover": {
+                                      backgroundColor: "transparent",
+                                      color: "#00a859",
+                                    },
+                                  }}
+                                >
+                                  {subMenuItem.text}
+                                </MenuItem>
+                              ))}
+                            </Menu>
+                          </React.Fragment>
+                        ) : (
+                          <Button
+                            component={Link}
+                            to={item.to}
+                            sx={{
+                              fontSize: "18px",
+                              color: "#fff",
+                              fontWeight: "bold",
+                              whiteSpace: "nowrap",
+                              "&:hover": {
+                                backgroundColor: "transparent",
+                                color: "#00a859",
+                              },
+                            }}
+                          >
+                            {item.text}
+                          </Button>
+                        )}
                       </ListItem>
                     ))}
-                  </ListMenu>
-                  <SearchIcon
-                    sx={{
-                      paddingTop: "15px",
-                      fontSize: 30,
-                      color: "#fff",
-                      fontWeight: 900,
-                      "&:hover": {
-                        backgroundColor: "transparent",
-                        color: "#00a859",
-                      },
-                    }}
-                  />
                 </Stack>
               </Stack>
             </motion.div>
@@ -284,8 +366,6 @@ const Header = () => {
           </Box>
         </Box>
       </CustomAppBar>
-      {/* Box text */}
-
       <ReactPlayer
         config={youtubeConfig}
         url={"https://www.youtube.com/watch?v=PPfyShd50NQ"}

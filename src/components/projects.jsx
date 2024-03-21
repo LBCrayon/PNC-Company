@@ -5,25 +5,27 @@ import LocalParkingIcon from "@mui/icons-material/LocalParking";
 import PodcastsIcon from "@mui/icons-material/Podcasts";
 import ScreenLockPortraitIcon from "@mui/icons-material/ScreenLockPortrait";
 import ScreenshotMonitorIcon from "@mui/icons-material/ScreenshotMonitor";
-import SearchIcon from "@mui/icons-material/Search";
 import SecurityIcon from "@mui/icons-material/Security";
 import SettingsInputCompositeIcon from "@mui/icons-material/SettingsInputComposite";
 import SettingsSuggestIcon from "@mui/icons-material/SettingsSuggest";
 import {
   AppBar,
   Box,
+  Button,
   Grid,
   ListItem,
   ListItemButton,
-  ListItemText,
+  Menu,
+  MenuItem,
   Stack,
   Toolbar,
   Typography,
   styled,
 } from "@mui/material";
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+
 const commonListItemButtonStyles = {
   color: "#fff",
   fontWeight: "bold",
@@ -72,10 +74,6 @@ const StyledListItemButton = styled(ListItemButton)({
 });
 
 const itemList = [
-  // {
-  //   text: "Đối tác",
-  //   to: "/about",
-  // },
   {
     text: "Tuyển dụng",
     to: "/recruit",
@@ -88,22 +86,47 @@ const itemList = [
 
 const itemList2 = [
   {
+    id: 1,
     text: "Trang chủ",
     to: "/",
   },
   {
+    id: 2,
     text: "Về chúng tôi",
     to: "/about",
   },
   {
+    id: 3,
     text: "Lĩnh vực kinh doanh chính",
     to: "/business",
+    subMenu: [
+      { text: "XEM TẤT CẢ", to: "/business" },
+      { text: "HỢP TÁC ĐẦU TƯ HẠ TẦNG VIỄN THÔNG", to: "/business1" },
+      { text: "ĐIỆN NHẸ", to: "/business2" },
+      { text: "KỸ THUẬT MẠNG VIỄN THÔNG", to: "/business3" },
+      { text: "THƯƠNG MẠI QUỐC TẾ", to: "/business4" },
+    ],
   },
   {
+    id: 4,
     text: "Dự án",
     to: "/project",
+    subMenu: [
+      { text: "XEM TẤT CẢ", to: "/project" },
+      { text: "SÂN BAY", to: "/project1" },
+      { text: "TRUNG TÂM HÀNH CHÍNH", to: "/project2" },
+      { text: "KHU PHỨC HỢP", to: "/project3" },
+      { text: "BỆNH VIỆN", to: "/project4" },
+      { text: "TRƯỜNG ĐẠI HỌC", to: "/project5" },
+      { text: "TRUNG TÂM THƯƠNG MẠI", to: "/project6" },
+      { text: "CAO ỐC VĂN PHÒNG", to: "/project7" },
+      { text: "KHÁCH SẠN/ CONDOTEL", to: "/project8" },
+      { text: "CHUNG CƯ/ CĂN HỘ CAO CẤP", to: "/project9" },
+      { text: "KÝ TÚC XÁ", to: "/project10" },
+    ],
   },
   {
+    id: 5,
     text: "Tin tức",
     to: "/news",
   },
@@ -124,7 +147,7 @@ const ProjectBox = ({ icon, title }) => (
       }}
     >
       {React.cloneElement(icon, {
-        style: { marginBottom: "8px" }, // Thêm khoảng cách giữa icon và tiêu đề
+        style: { marginBottom: "18px" }, // Thêm khoảng cách giữa icon và tiêu đề
       })}
       <Typography
         fontWeight={900}
@@ -140,6 +163,18 @@ const ProjectBox = ({ icon, title }) => (
 );
 
 const Projects = () => {
+  const [anchorEl1, setAnchorEl1] = useState(null);
+  const [anchorEl2, setAnchorEl2] = useState(null);
+
+  const handleClick = (event, anchorElSetter) => {
+    if (anchorElSetter !== event.currentTarget) {
+      anchorElSetter(event.currentTarget);
+    }
+  };
+
+  const handleClose = (anchorElSetter) => {
+    anchorElSetter(null);
+  };
   return (
     <Stack
       container
@@ -147,7 +182,7 @@ const Projects = () => {
         backgroundImage: `url("https://www.ibs.com.vn/wp-content/uploads/2020/03/Group-7757-4.png")`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        height: "35vh",
+        height: "15vh",
         pb: "400px",
       }}
     >
@@ -204,17 +239,92 @@ const Projects = () => {
                     ))}
                   </ListMenu>
                   <Stack direction="row" spacing={2}>
-                    <ListMenu>
-                      {itemList2.map((item) => (
-                        <ListItem key={item.text}>
-                          <StyledListItemButton
+                    {itemList2.map((item) => (
+                      <ListItem key={item.id}>
+                        {item.subMenu ? (
+                          <React.Fragment>
+                            <Button
+                              aria-owns={
+                                item.id === 3 ? "sub-menu1" : "sub-menu2"
+                              }
+                              aria-haspopup="true"
+                              onClick={(e) =>
+                                handleClick(
+                                  e,
+                                  item.id === 3 ? setAnchorEl1 : setAnchorEl2
+                                )
+                              }
+                              onMouseOver={(e) =>
+                                handleClick(
+                                  e,
+                                  item.id === 3 ? setAnchorEl1 : setAnchorEl2
+                                )
+                              }
+                              sx={{
+                                fontSize: "18px",
+                                color: "#fff",
+                                fontWeight: "bold",
+                                whiteSpace: "nowrap",
+                                "&&:hover": {
+                                  color: "#00a859",
+                                  borderColor: "#00a859",
+                                },
+                              }}
+                            >
+                              {item.text}
+                            </Button>
+                            <Menu
+                              id={item.id === 3 ? "sub-menu1" : "sub-menu2"}
+                              anchorEl={item.id === 3 ? anchorEl1 : anchorEl2}
+                              open={Boolean(
+                                item.id === 3 ? anchorEl1 : anchorEl2
+                              )}
+                              onClose={() =>
+                                handleClose(
+                                  item.id === 3 ? setAnchorEl1 : setAnchorEl2
+                                )
+                              }
+                              MenuListProps={{
+                                onMouseLeave: () =>
+                                  handleClose(
+                                    item.id === 3 ? setAnchorEl1 : setAnchorEl2
+                                  ),
+                              }}
+                            >
+                              {item.subMenu.map((subMenuItem) => (
+                                <MenuItem
+                                  key={subMenuItem.text}
+                                  component={Link}
+                                  to={subMenuItem.to}
+                                  onClick={() =>
+                                    handleClose(
+                                      item.id === 3
+                                        ? setAnchorEl1
+                                        : setAnchorEl2
+                                    )
+                                  }
+                                  sx={{
+                                    borderColor: "#00a859",
+                                    "&:hover": {
+                                      backgroundColor: "transparent",
+                                      color: "#00a859",
+                                    },
+                                  }}
+                                >
+                                  {subMenuItem.text}
+                                </MenuItem>
+                              ))}
+                            </Menu>
+                          </React.Fragment>
+                        ) : (
+                          <Button
                             component={Link}
                             to={item.to}
                             sx={{
                               fontSize: "18px",
                               color: "#fff",
                               fontWeight: "bold",
-                              whiteSpace: "nowrap", // Prevent text from wrapping
+                              whiteSpace: "nowrap",
                               "&:hover": {
                                 backgroundColor: "transparent",
                                 color: "#00a859",
@@ -222,23 +332,10 @@ const Projects = () => {
                             }}
                           >
                             {item.text}
-                          </StyledListItemButton>
-                        </ListItem>
-                      ))}
-                    </ListMenu>
-
-                    <SearchIcon
-                      sx={{
-                        paddingTop: "15px",
-                        fontSize: 30,
-                        color: "#fff",
-                        fontWeight: "bold",
-                        "&:hover": {
-                          backgroundColor: "transparent",
-                          color: "orange",
-                        },
-                      }}
-                    />
+                          </Button>
+                        )}
+                      </ListItem>
+                    ))}
                   </Stack>
                 </Stack>
               </motion.div>
@@ -283,67 +380,6 @@ const Projects = () => {
               trên thế giới.
             </Typography>
           </Stack>
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 2, y: 0 }}
-            transition={{ duration: 1.5 }}
-          >
-            <Stack
-              justifyContent={"center"}
-              direction={{ xs: "column", md: "row" }}
-              spacing={{ xs: 2, md: 1 }}
-              mt={6}
-            >
-              <ProjectBox
-                icon={<PodcastsIcon />}
-                title="GIẢI PHÁP PHỦ SÓNG DI ĐỘNG (IBS)"
-              />
-              <ProjectBox
-                icon={<SettingsInputCompositeIcon />}
-                title="HỆ THỐNG CÁP QUANG CUNG CẤP DỊCH VỤ INTERNET & TRUYỀN HÌNH CÁP"
-              />
-              <ProjectBox
-                icon={<SecurityIcon />}
-                title="HỆ THỐNG AN NINH TÍCH HỢP"
-              />
-              <ProjectBox
-                icon={<ScreenLockPortraitIcon />}
-                title="HỆ THỐNG AN NINH VÀO RA SỬ THẺ (ACCS)"
-              />
-              <ProjectBox
-                icon={<ScreenshotMonitorIcon />}
-                title="HỆ THỐNG GIÁM SÁT LICH TRÌNH BẢO VỆ ĐIỆN TỬ (Guard Tour)"
-              />
-            </Stack>
-            <Stack
-              justifyContent={"center"}
-              direction={{ xs: "column", md: "row" }}
-              spacing={{ xs: 2, md: 2 }}
-              mt={6}
-            >
-              {" "}
-              <ProjectBox
-                icon={<CameraOutdoorIcon />}
-                title="HỆ THỐNG CAMERA QUAN SÁT"
-              />
-              <ProjectBox
-                icon={<DoorbellIcon />}
-                title="HỆ THỐNG CHUÔNG CỬA CÓ HÌNH"
-              />
-              <ProjectBox
-                icon={<SettingsSuggestIcon />}
-                title="HỆ THỐNG KIỂM SOÁT RA VÀO"
-              />
-              <ProjectBox
-                icon={<ElevatorIcon />}
-                title="GIẢI PHÁP KIỂM SOÁT PHÂN TẦNG THANG MÁY"
-              />
-              <ProjectBox
-                icon={<LocalParkingIcon />}
-                title="GIẢI PHÁP QUẢN LÝ HỆ THỐNG BÃI GIỮ XE THÔNG MINH"
-              />
-            </Stack>
-          </motion.div>
         </CustomAppBar>
       </CustomBox>
     </Stack>

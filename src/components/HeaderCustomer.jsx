@@ -1,10 +1,8 @@
-import SearchIcon from "@mui/icons-material/Search";
 import {
   AppBar,
   Grid,
   ListItem,
   ListItemButton,
-  ListItemText,
   Stack,
   Toolbar,
   Typography,
@@ -13,7 +11,10 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import { styled } from "@mui/material/styles";
 import { motion } from "framer-motion";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+
+import { Button, Menu, MenuItem } from "@mui/material";
 
 const commonListItemButtonStyles = {
   color: "#fff",
@@ -36,7 +37,7 @@ const StyledToolbar = styled(Toolbar)({
 });
 
 const CustomBox = styled(Box)(({ theme }) => ({
-  minHeight: "90vh",
+  minHeight: "40vh",
   display: "flex",
   justifyContent: "center",
   paddingTop: theme.spacing(4),
@@ -79,22 +80,47 @@ const itemList = [
 
 const itemList2 = [
   {
+    id: 1,
     text: "Trang chủ",
     to: "/",
   },
   {
+    id: 2,
     text: "Về chúng tôi",
     to: "/about",
   },
   {
+    id: 3,
     text: "Lĩnh vực kinh doanh chính",
     to: "/business",
+    subMenu: [
+      { text: "XEM TẤT CẢ", to: "/business" },
+      { text: "HỢP TÁC ĐẦU TƯ HẠ TẦNG VIỄN THÔNG", to: "/business1" },
+      { text: "ĐIỆN NHẸ", to: "/business2" },
+      { text: "KỸ THUẬT MẠNG VIỄN THÔNG", to: "/business3" },
+      { text: "THƯƠNG MẠI QUỐC TẾ", to: "/business4" },
+    ],
   },
   {
+    id: 4,
     text: "Dự án",
     to: "/project",
+    subMenu: [
+      { text: "XEM TẤT CẢ", to: "/project" },
+      { text: "SÂN BAY", to: "/project1" },
+      { text: "TRUNG TÂM HÀNH CHÍNH", to: "/project2" },
+      { text: "KHU PHỨC HỢP", to: "/project3" },
+      { text: "BỆNH VIỆN", to: "/project4" },
+      { text: "TRƯỜNG ĐẠI HỌC", to: "/project5" },
+      { text: "TRUNG TÂM THƯƠNG MẠI", to: "/project6" },
+      { text: "CAO ỐC VĂN PHÒNG", to: "/project7" },
+      { text: "KHÁCH SẠN/ CONDOTEL", to: "/project8" },
+      { text: "CHUNG CƯ/ CĂN HỘ CAO CẤP", to: "/project9" },
+      { text: "KÝ TÚC XÁ", to: "/project10" },
+    ],
   },
   {
+    id: 5,
     text: "Tin tức",
     to: "/news",
   },
@@ -115,6 +141,18 @@ const Item = styled(Paper)(({ theme }) => ({
 
 // img
 const HeaderCustomer = () => {
+  const [anchorEl1, setAnchorEl1] = useState(null);
+  const [anchorEl2, setAnchorEl2] = useState(null);
+
+  const handleClick = (event, anchorElSetter) => {
+    if (anchorElSetter !== event.currentTarget) {
+      anchorElSetter(event.currentTarget);
+    }
+  };
+
+  const handleClose = (anchorElSetter) => {
+    anchorElSetter(null);
+  };
   return (
     <Stack
       container
@@ -178,17 +216,88 @@ const HeaderCustomer = () => {
                     ))}
                   </ListMenu>
                   <Stack direction="row" spacing={2}>
-                    <ListMenu>
-                      {itemList2.map((item) => (
-                        <ListItem key={item.text}>
-                          <StyledListItemButton
+                    {itemList2.map((item) => (
+                      <ListItem key={item.id}>
+                        {item.subMenu ? (
+                          <React.Fragment>
+                            <Button
+                              aria-owns={
+                                item.id === 3 ? "sub-menu1" : "sub-menu2"
+                              }
+                              aria-haspopup="true"
+                              onClick={(e) =>
+                                handleClick(
+                                  e,
+                                  item.id === 3 ? setAnchorEl1 : setAnchorEl2
+                                )
+                              }
+                              onMouseOver={(e) =>
+                                handleClick(
+                                  e,
+                                  item.id === 3 ? setAnchorEl1 : setAnchorEl2
+                                )
+                              }
+                              sx={{
+                                fontSize: "18px",
+                                color: "#fff",
+                                fontWeight: "bold",
+                                whiteSpace: "nowrap",
+                              }}
+                            >
+                              {item.text}
+                            </Button>
+                            <Menu
+                              id={item.id === 3 ? "sub-menu1" : "sub-menu2"}
+                              anchorEl={item.id === 3 ? anchorEl1 : anchorEl2}
+                              open={Boolean(
+                                item.id === 3 ? anchorEl1 : anchorEl2
+                              )}
+                              onClose={() =>
+                                handleClose(
+                                  item.id === 3 ? setAnchorEl1 : setAnchorEl2
+                                )
+                              }
+                              MenuListProps={{
+                                onMouseLeave: () =>
+                                  handleClose(
+                                    item.id === 3 ? setAnchorEl1 : setAnchorEl2
+                                  ),
+                              }}
+                            >
+                              {item.subMenu.map((subMenuItem) => (
+                                <MenuItem
+                                  key={subMenuItem.text}
+                                  component={Link}
+                                  to={subMenuItem.to}
+                                  onClick={() =>
+                                    handleClose(
+                                      item.id === 3
+                                        ? setAnchorEl1
+                                        : setAnchorEl2
+                                    )
+                                  }
+                                  sx={{
+                                    borderColor: "#00a859",
+                                    "&:hover": {
+                                      backgroundColor: "transparent",
+                                      color: "#00a859",
+                                    },
+                                  }}
+                                >
+                                  {subMenuItem.text}
+                                </MenuItem>
+                              ))}
+                            </Menu>
+                          </React.Fragment>
+                        ) : (
+                          <Button
                             component={Link}
                             to={item.to}
                             sx={{
                               fontSize: "18px",
                               color: "#fff",
                               fontWeight: "bold",
-                              whiteSpace: "nowrap", // Prevent text from wrapping
+                              whiteSpace: "nowrap",
                               "&:hover": {
                                 backgroundColor: "transparent",
                                 color: "#00a859",
@@ -196,46 +305,15 @@ const HeaderCustomer = () => {
                             }}
                           >
                             {item.text}
-                          </StyledListItemButton>
-                        </ListItem>
-                      ))}
-                    </ListMenu>
-
-                    <SearchIcon
-                      sx={{
-                        paddingTop: "15px",
-                        fontSize: 30,
-                        color: "#fff",
-                        fontWeight: "bold",
-                        "&:hover": {
-                          backgroundColor: "transparent",
-                          color: "#00a859",
-                        },
-                      }}
-                    />
+                          </Button>
+                        )}
+                      </ListItem>
+                    ))}
                   </Stack>
                 </Stack>
               </motion.div>
             </Grid>
           </Grid>
-          <Stack justifyContent={"center"} direction="row" spacing={2} mt={4}>
-            <Typography
-              variant="h5"
-              component="h5"
-              sx={{
-                pt: 20,
-                fontWeight: 900,
-                color: "#fff",
-                fontSize: "50px",
-                "&:hover": {
-                  backgroundColor: "transparent",
-                  color: "white",
-                },
-              }}
-            >
-              CÔNG TY TNHH XÂY LẮP KỸ THUẬT PHƯƠNG NAM
-            </Typography>
-          </Stack>
         </CustomAppBar>
       </CustomBox>
     </Stack>

@@ -141,7 +141,7 @@ const GetStarted = () => {
                   }}
                 />
                 <Typography variant="h6" component="h5" color="white">
-                  Dịch vụ kỹ thuật mạng viễn thông
+                  Kỹ thuật mạng viễn thông
                 </Typography>
               </Box>
             </motion.div>

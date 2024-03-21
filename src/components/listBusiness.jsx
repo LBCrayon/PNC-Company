@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import React, { useState } from "react";
-import { Grid } from "@mui/material";
+import { Grid, Link } from "@mui/material";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
+import React, { useState } from "react";
 const ListBusiness = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
@@ -14,7 +14,7 @@ const ListBusiness = () => {
     setHoveredIndex(null);
   };
 
-  const renderGridItem = (index, src, xsSize, title) => (
+  const renderGridItem = (index, src, xsSize, title, detail) => (
     <Grid
       height={"40vh"}
       item
@@ -44,12 +44,13 @@ const ListBusiness = () => {
           position: "absolute",
           top: 20,
           left: 20,
-          color: "#00a859", // text color
-          fontSize: "18px    ",
+          color: "#fff", // text color
+          fontSize: "24px    ",
         }}
       >
         {title}
       </Typography>
+
       {hoveredIndex === index && (
         <Paper
           elevation={3}
@@ -66,14 +67,7 @@ const ListBusiness = () => {
             textAlign: "center",
           }}
         >
-          <Typography>
-            IBS hiện nay sở hữu một năng lực toàn diện để cung cấp giải pháp
-            trọn gói “Chìa khóa trao tay” trên cương vị một tổng thầu EPC, ở tất
-            cả các lĩnh vực công nghiệp, năng lượng và đặc biệt là xây dựng dân
-            dụng và các siêu dự án - đòi hỏi sự phức tạp và tinh vi từ quá trình
-            khởi tạo và lập kế hoạch, thiết kế kỹ thuật, xây dựng, tới vận hành
-            và bảo dưỡng.
-          </Typography>
+          <Typography>{detail}</Typography>
         </Paper>
       )}
     </Grid>
@@ -90,84 +84,50 @@ const ListBusiness = () => {
       py={8}
     >
       <Grid item xs={12} sm={6} md={6}>
-        {renderGridItem(
-          0,
-          "https://static.vinwonders.com/production/san-bay-quoc-te-tan-son-nhat.jpg",
-          12,
-          "SÂN BAY"
-        )}
+        <Link href="/business1">
+          {renderGridItem(
+            0,
+            "https://static.vinwonders.com/production/san-bay-quoc-te-tan-son-nhat.jpg",
+            12,
+            "Hợp tác đầu tư hạ tầng viễn thông",
+            "PHƯƠNG NAM luôn nỗ lực trở thành công ty hàng đầu trong lĩnh vực hợp tác đầu tư hạ tầng viễn thông, nhà cung cấp và phân phối các giải pháp camera, an ninh tích hợp và các giải pháp điện nhẹ (hệ thống mạng, tổng đài, nhà thông minh) tại Việt Nam, đặc biệt các giải pháp của chúng tôi đều hướng tới người dùng cuối cùng và được xây dựng trên nền CNTT và sản phẩm của các nhà sản xuất hàng đầu trên thế giới."
+          )}
+        </Link>
+      </Grid>
+
+      <Grid item xs={12} sm={6} md={6}>
+        <Link href="/business2">
+          {renderGridItem(
+            1,
+            "https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2023/9/30/1248346/382894547_6239972332.jpg",
+            12,
+            "Điện nhẹ",
+
+            "Hệ thống điện nhẹ (Hệ thống mạng, tổng đài, nhà thông minh) &Hệ thống An Ninh tích hợp trong các công trình là một nhu cầu hết sức cấp thiết."
+          )}
+        </Link>
       </Grid>
       <Grid item xs={12} sm={6} md={6}>
-        {renderGridItem(
-          1,
-          "https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2023/9/30/1248346/382894547_6239972332.jpg",
-          12,
-          "TRUNG TÂM HÀNH CHÍNH"
-        )}
+        <Link href="/business3">
+          {renderGridItem(
+            2,
+            "https://bdsvinhomes.com.vn/wp-content/uploads/2020/03/vinhomes-central-park-slide.jpg",
+            12,
+            "Kỹ thuật mạng viễn thông",
+            "Kỹ thuật mạng viễn thông là những dịch vụ cung cấp sự hỗ trợ và quản lý kỹ thuật cho các hệ thống mạng viễn thông. Đây là một lĩnh vực quan trọng trong ngành viễn thông để đảm bảo rằng các mạng di động, internet, và các hệ thống truyền thông khác hoạt động hiệu quả và ổn định. Dịch vụ này thường được cung cấp bởi các công ty viễn thông, nhà cung cấp dịch vụ internet, và các doanh nghiệp có hệ thống mạng phức tạp."
+          )}
+        </Link>
       </Grid>
       <Grid item xs={12} sm={6} md={6}>
-        {renderGridItem(
-          2,
-          "https://bdsvinhomes.com.vn/wp-content/uploads/2020/03/vinhomes-central-park-slide.jpg",
-          12,
-          "KHU PHỨC HỢP"
-        )}
-      </Grid>
-      <Grid item xs={12} sm={6} md={6}>
-        {renderGridItem(
-          3,
-          "https://cdn.youmed.vn/tin-tuc/wp-content/uploads/2022/07/chuyen-khoa-benh-vien-quan-y-175.jpg",
-          12,
-          "BỆNH VIỆN"
-        )}
-      </Grid>
-      <Grid item xs={12} sm={6} md={6}>
-        {renderGridItem(
-          4,
-          "https://afamilycdn.com/150157425591193600/2020/2/20/1-1582158100730799166516.jpg",
-          12,
-          "TRƯỜNG ĐẠI HỌC"
-        )}
-      </Grid>
-      <Grid item xs={12} sm={6} md={6}>
-        {renderGridItem(
-          5,
-          "https://cdn.alongwalk.info/vn/wp-content/uploads/2022/04/08232645/image-big-c-da-lat-trung-tam-mua-sam-giai-tri-hap-dan-164941000543450.jpg",
-          12,
-          "TRUNG TÂM THƯƠNG MẠI"
-        )}
-      </Grid>
-      <Grid item xs={12} sm={6} md={6}>
-        {renderGridItem(
-          6,
-          "https://maisonoffice.vn/wp-content/uploads/2021/09/toa-nha-the-flemington-tower-le-dai-hanh.jpg",
-          12,
-          "CAO ỐC VĂN PHÒNG"
-        )}
-      </Grid>
-      <Grid item xs={12} sm={6} md={6}>
-        {renderGridItem(
-          7,
-          "https://d2ile4x3f22snf.cloudfront.net/wp-content/uploads/sites/174/2017/08/14074754/rex-hotel-vietnam-home-slideshow-image-01.jpg",
-          12,
-          "KHÁCH SẠN/ CONDOTEL"
-        )}
-      </Grid>
-      <Grid item xs={12} sm={6} md={6}>
-        {renderGridItem(
-          8,
-          "https://phumyhungsale.com/data/upload/image_manual/mua-can-ho-phu-my-hung-midtown-ty-le-choi-1-3-50%20(1).jpg?1507888033422",
-          12,
-          "CHUNG CƯ/ CĂN HỘ CAO CẤP"
-        )}
-      </Grid>
-      <Grid item xs={12} sm={6} md={6}>
-        {renderGridItem(
-          9,
-          "https://toquoc.mediacdn.vn/280518851207290880/2023/12/3/202312011226img1804-1701571901408840303217.jpg",
-          12,
-          "KÝ TÚC XÁ"
-        )}
+        <Link href="/business4">
+          {renderGridItem(
+            3,
+            "https://cdn.youmed.vn/tin-tuc/wp-content/uploads/2022/07/chuyen-khoa-benh-vien-quan-y-175.jpg",
+            12,
+            "Thương mại quốc tế",
+            "Thương mại quốc tế là quá trình mua bán hàng hóa và dịch vụ giữa các quốc gia khác nhau. Nó bao gồm các hoạt động kinh doanh giữa các doanh nghiệp và chính phủ từ các quốc gia khác nhau, nhằm mục đích trao đổi hàng hóa, dịch vụ và nguồn lực."
+          )}
+        </Link>
       </Grid>
     </Grid>
   );

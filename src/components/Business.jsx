@@ -1,27 +1,22 @@
 /* eslint-disable jsx-a11y/alt-text */
-import MapsHomeWorkOutlinedIcon from "@mui/icons-material/MapsHomeWorkOutlined";
-import SearchIcon from "@mui/icons-material/Search";
-import { Box, Grid, Stack, Typography, styled } from "@mui/material";
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import {
   AppBar,
+  Box,
+  Button,
+  Grid,
   ListItem,
   ListItemButton,
-  ListItemText,
+  Menu,
+  MenuItem,
+  Stack,
   Toolbar,
+  Typography,
+  styled,
 } from "@mui/material";
+import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-const commonListItemButtonStyles = {
-  color: "#fff",
-  fontWeight: "bold",
-  whiteSpace: "nowrap",
-  "&:hover": {
-    backgroundColor: "transparent",
-    color: "#00a859",
-  },
-};
 
 const CustomAppBar = styled(AppBar)({
   backgroundColor: "rgba(0, 0, 0, 0)",
@@ -77,22 +72,48 @@ const itemList = [
 
 const itemList2 = [
   {
+    id: 1,
     text: "Trang chủ",
     to: "/",
   },
   {
+    id: 2,
     text: "Về chúng tôi",
     to: "/about",
   },
   {
+    id: 3,
     text: "Lĩnh vực kinh doanh chính",
     to: "/business",
+    subMenu: [
+      { text: "XEM TẤT CẢ", to: "/business" },
+      { text: "HỢP TÁC ĐẦU TƯ HẠ TẦNG VIỄN THÔNG", to: "/business1" },
+      { text: "ĐIỆN NHẸ", to: "/business2" },
+      { text: "KỸ THUẬT MẠNG VIỄN THÔNG", to: "/business3" },
+      { text: "THƯƠNG MẠI QUỐC TẾ", to: "/business4" },
+    ],
   },
   {
+    id: 4,
     text: "Dự án",
     to: "/project",
+    subMenu: [
+      { text: "XEM TẤT CẢ", to: "/project" },
+      { text: "SÂN BAY", to: "/project1" },
+      { text: "TRUNG TÂM HÀNH CHÍNH", to: "/project2" },
+      { text: "KHU PHỨC HỢP", to: "/project3" },
+      { text: "BỆNH VIỆN", to: "/project4" },
+      { text: "TRƯỜNG ĐẠI HỌC", to: "/project5" },
+      { text: "TRUNG TÂM THƯƠNG MẠI", to: "/project6" },
+      { text: "CAO ỐC VĂN PHÒNG", to: "/project7" },
+      { text: "KHÁCH SẠN/ CONDOTEL", to: "/project8" },
+      { text: "CHUNG CƯ/ CĂN HỘ CAO CẤP", to: "/project9" },
+      { text: "KÝ TÚC XÁ", to: "/project10" },
+     
+    ],
   },
   {
+    id: 5,
     text: "Tin tức",
     to: "/news",
   },
@@ -103,6 +124,18 @@ const linkStyle = {
 };
 
 const Businesses = () => {
+  const [anchorEl1, setAnchorEl1] = useState(null);
+  const [anchorEl2, setAnchorEl2] = useState(null);
+
+  const handleClick = (event, anchorElSetter) => {
+    if (anchorElSetter !== event.currentTarget) {
+      anchorElSetter(event.currentTarget);
+    }
+  };
+
+  const handleClose = (anchorElSetter) => {
+    anchorElSetter(null);
+  };
   return (
     <Stack
       container
@@ -167,17 +200,88 @@ const Businesses = () => {
                     ))}
                   </ListMenu>
                   <Stack direction="row" spacing={2}>
-                    <ListMenu>
-                      {itemList2.map((item) => (
-                        <ListItem key={item.text}>
-                          <StyledListItemButton
+                  {itemList2.map((item) => (
+                      <ListItem key={item.id}>
+                        {item.subMenu ? (
+                          <React.Fragment>
+                            <Button
+                              aria-owns={
+                                item.id === 3 ? "sub-menu1" : "sub-menu2"
+                              }
+                              aria-haspopup="true"
+                              onClick={(e) =>
+                                handleClick(
+                                  e,
+                                  item.id === 3 ? setAnchorEl1 : setAnchorEl2
+                                )
+                              }
+                              onMouseOver={(e) =>
+                                handleClick(
+                                  e,
+                                  item.id === 3 ? setAnchorEl1 : setAnchorEl2
+                                )
+                              }
+                              sx={{
+                                fontSize: "18px",
+                                color: "#fff",
+                                fontWeight: "bold",
+                                whiteSpace: "nowrap",
+                              }}
+                            >
+                              {item.text}
+                            </Button>
+                            <Menu
+                              id={item.id === 3 ? "sub-menu1" : "sub-menu2"}
+                              anchorEl={item.id === 3 ? anchorEl1 : anchorEl2}
+                              open={Boolean(
+                                item.id === 3 ? anchorEl1 : anchorEl2
+                              )}
+                              onClose={() =>
+                                handleClose(
+                                  item.id === 3 ? setAnchorEl1 : setAnchorEl2
+                                )
+                              }
+                              MenuListProps={{
+                                onMouseLeave: () =>
+                                  handleClose(
+                                    item.id === 3 ? setAnchorEl1 : setAnchorEl2
+                                  ),
+                              }}
+                            >
+                              {item.subMenu.map((subMenuItem) => (
+                                <MenuItem
+                                  key={subMenuItem.text}
+                                  component={Link}
+                                  to={subMenuItem.to}
+                                  onClick={() =>
+                                    handleClose(
+                                      item.id === 3
+                                        ? setAnchorEl1
+                                        : setAnchorEl2
+                                    )
+                                  }
+                                  sx={{
+                                    borderColor: "#00a859",
+                                    "&:hover": {
+                                      backgroundColor: "transparent",
+                                      color: "#00a859",
+                                    },
+                                  }}
+                                >
+                                  {subMenuItem.text}
+                                </MenuItem>
+                              ))}
+                            </Menu>
+                          </React.Fragment>
+                        ) : (
+                          <Button
                             component={Link}
                             to={item.to}
                             sx={{
                               fontSize: "18px",
                               color: "#fff",
                               fontWeight: "bold",
-                              whiteSpace: "nowrap", // Prevent text from wrapping
+                              whiteSpace: "nowrap",
                               "&:hover": {
                                 backgroundColor: "transparent",
                                 color: "#00a859",
@@ -185,23 +289,10 @@ const Businesses = () => {
                             }}
                           >
                             {item.text}
-                          </StyledListItemButton>
-                        </ListItem>
-                      ))}
-                    </ListMenu>
-
-                    <SearchIcon
-                      sx={{
-                        paddingTop: "15px",
-                        fontSize: 30,
-                        color: "#fff",
-                        fontWeight: "bold",
-                        "&:hover": {
-                          backgroundColor: "transparent",
-                          color: "#00a859",
-                        },
-                      }}
-                    />
+                          </Button>
+                        )}
+                      </ListItem>
+                    ))}
                   </Stack>
                 </Stack>
               </motion.div>
